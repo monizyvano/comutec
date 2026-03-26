@@ -1,0 +1,393 @@
+/* =====================================================
+   COMUTEC — Estilos da Página de Login
+   Ficheiro: login.css
+   
+   VARIÁVEIS PARTILHADAS COM OS OUTROS FICHEIROS CSS
+   Para manter consistência visual em todo o projecto
+===================================================== */
+
+:root {
+    /* --- CORES PRINCIPAIS --- */
+    --cor-fundo:           #020f1a;
+    --cor-fundo-cartao:    #071e33;
+    --cor-primaria:        #00e5cc;
+    --cor-secundaria:      #0075ff;
+    --cor-destaque:        #00c896;
+
+    /* --- GRADIENTES --- */
+    --gradiente-principal: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+
+    /* --- TEXTO --- */
+    --cor-texto:           #f0f9ff;
+    --cor-texto-suave:     #7bafc8;
+    --cor-texto-escuro:    #020f1a;
+
+    /* --- BORDAS & ERROS --- */
+    --cor-borda:           rgba(0, 229, 204, 0.15);
+    --cor-borda-hover:     rgba(0, 229, 204, 0.5);
+    --cor-erro:            #f87171;
+
+    /* --- TIPOGRAFIA --- */
+    --fonte-titulo:        'Exo 2', sans-serif;
+    --fonte-corpo:         'Inter', sans-serif;
+
+    /* --- ESPAÇAMENTOS --- */
+    --espacamento-sm:      8px;
+    --espacamento-md:      16px;
+    --espacamento-lg:      24px;
+    --espacamento-xl:      40px;
+
+    /* --- RAIOS DE BORDA --- */
+    --raio-sm:             6px;
+    --raio-md:             12px;
+    --raio-lg:             20px;
+
+    /* --- TRANSIÇÕES --- */
+    --transicao-rapida:    0.2s ease;
+    --transicao-normal:    0.35s ease;
+}
+
+
+/* =====================================================
+   RESET & BASE
+===================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espacamento-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   FUNDO DECORATIVO — Círculos luminosos
+===================================================== */
+.fundo-decorativo {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+}
+
+.circulo--1 {
+    width: 500px;
+    height: 500px;
+    background: var(--cor-primaria);
+    top: -150px;
+    right: -150px;
+}
+
+.circulo--2 {
+    width: 400px;
+    height: 400px;
+    background: var(--cor-secundaria);
+    bottom: -100px;
+    left: -100px;
+}
+
+
+/* =====================================================
+   CAIXA DE LOGIN (CONTENTOR PRINCIPAL)
+===================================================== */
+.caixa-login {
+    position: relative;
+    z-index: 1;
+    background: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-lg);
+    padding: var(--espacamento-xl);
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 229, 204, 0.05);
+
+    /* Animação de entrada */
+    animation: aparecer 0.6s ease both;
+}
+
+
+/* =====================================================
+   ÁREA DO LOGÓTIPO
+===================================================== */
+.area-logo {
+    text-align: center;
+    margin-bottom: var(--espacamento-xl);
+}
+
+.logotipo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cor-texto);
+    text-decoration: none;
+    margin-bottom: var(--espacamento-lg);
+}
+
+.logotipo__icone {
+    width: 36px;
+    height: 36px;
+}
+
+.area-logo h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+    margin-bottom: 6px;
+}
+
+.area-logo p {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   GRUPOS DE CAMPO (label + input)
+===================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-lg);
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-sm);
+}
+
+/* Label com ícone */
+label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+}
+
+label svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Contentor do input com botão interno (para ver senha) */
+.campo-com-icone {
+    position: relative;
+}
+
+/* Campo de texto */
+input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--cor-borda);
+    padding: 13px 16px;
+    border-radius: var(--raio-md);
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    font-family: var(--fonte-corpo);
+    transition: border-color var(--transicao-rapida),
+                box-shadow var(--transicao-rapida);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(0, 229, 204, 0.15);
+}
+
+/* Placeholder */
+input::placeholder {
+    color: rgba(123, 175, 200, 0.5);
+}
+
+/* Estado de erro no input */
+input.com-erro {
+    border-color: var(--cor-erro);
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15);
+}
+
+/* Botão para ver/esconder a palavra-passe */
+.btn-ver-senha {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--cor-texto-suave);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color var(--transicao-rapida);
+}
+
+.btn-ver-senha:hover {
+    color: var(--cor-primaria);
+}
+
+.btn-ver-senha svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Mensagem de erro abaixo do campo */
+.mensagem-erro {
+    font-size: 0.8rem;
+    color: var(--cor-erro);
+    min-height: 16px; /* Reserva espaço para não deslocar o layout */
+}
+
+
+/* =====================================================
+   LINK "ESQUECEU A SENHA"
+===================================================== */
+.link-esqueceu {
+    display: block;
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    margin-top: -8px;
+    transition: opacity var(--transicao-rapida);
+}
+
+.link-esqueceu:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   BOTÃO DE ENTRAR
+===================================================== */
+.botao-entrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: var(--gradiente-principal);
+    color: var(--cor-texto-escuro);
+    border: none;
+    border-radius: var(--raio-md);
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--fonte-titulo);
+    cursor: pointer;
+    transition: all var(--transicao-normal);
+    margin-top: var(--espacamento-sm);
+}
+
+.botao-entrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 229, 204, 0.35);
+    filter: brightness(1.1);
+}
+
+.botao-entrar:active {
+    transform: translateY(0);
+}
+
+/* Estado de carregamento */
+.botao-entrar.carregando {
+    opacity: 0.8;
+    pointer-events: none; /* Desactiva cliques durante o carregamento */
+}
+
+.botao-entrar svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =====================================================
+   RODAPÉ DO FORMULÁRIO
+===================================================== */
+.rodape-formulario {
+    text-align: center;
+    margin-top: var(--espacamento-lg);
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}
+
+.rodape-formulario a {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity var(--transicao-rapida);
+}
+
+.rodape-formulario a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.link-voltar {
+    display: block;
+    text-align: center;
+    margin-top: var(--espacamento-md);
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+    text-decoration: none;
+    transition: color var(--transicao-rapida);
+}
+
+.link-voltar:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* =====================================================
+   ANIMAÇÃO DE ENTRADA DA CAIXA
+===================================================== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE MOBILE
+===================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: var(--espacamento-md);
+        align-items: flex-start;
+        padding-top: var(--espacamento-xl);
+    }
+
+    .caixa-login {
+        padding: var(--espacamento-lg);
+    }
+}

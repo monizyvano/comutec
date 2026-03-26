@@ -1,0 +1,943 @@
+/* =====================================================
+   COMUTEC — Folha de Estilos Principal
+   Ficheiro: pagina_inicial.css
+   Autor: Equipa Comutec
+   Versão: 2.0
+   
+   ESTRUTURA DO FICHEIRO:
+   1. Variáveis de Design (raiz)
+   2. Reset & Base
+   3. Tipografia
+   4. Utilitários
+   5. Cabeçalho / Navegação
+   6. Secção Herói
+   7. Secção Serviços
+   8. Secção Estatísticas
+   9. Secção CTA
+   10. Rodapé
+   11. Animações
+   12. Media Queries (Mobile)
+===================================================== */
+
+
+/* =====================================================
+   1. VARIÁVEIS DE DESIGN
+   Muda aqui as cores e tudo o site se actualiza
+===================================================== */
+:root {
+    /* --- CORES PRINCIPAIS (inspiradas no logótipo) --- */
+    --cor-fundo:           #020f1a;   /* Azul muito escuro — fundo da página */
+    --cor-fundo-cartao:    #071e33;   /* Azul escuro — fundo dos cartões */
+    --cor-fundo-cartao-2:  #0a2540;   /* Azul médio — cartões secundários */
+
+    --cor-primaria:        #00e5cc;   /* Ciano/verde-azulado — cor principal */
+    --cor-secundaria:      #0075ff;   /* Azul brilhante — cor secundária */
+    --cor-destaque:        #00c896;   /* Verde ciano — destaques */
+
+    /* --- GRADIENTES --- */
+    --gradiente-principal: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    --gradiente-fundo:     radial-gradient(ellipse at top left, #0a2540 0%, #020f1a 60%);
+
+    /* --- TEXTO --- */
+    --cor-texto:           #f0f9ff;   /* Branco azulado — texto principal */
+    --cor-texto-suave:     #7bafc8;   /* Azul acinzentado — texto secundário */
+    --cor-texto-escuro:    #020f1a;   /* Para texto sobre fundos claros */
+
+    /* --- BORDAS & SOMBRAS --- */
+    --cor-borda:           rgba(0, 229, 204, 0.15);  /* Borda subtil ciana */
+    --cor-borda-hover:     rgba(0, 229, 204, 0.5);   /* Borda ao passar o rato */
+    --sombra-cartao:       0 8px 32px rgba(0, 0, 0, 0.4);
+    --sombra-brilho:       0 0 30px rgba(0, 229, 204, 0.15);
+
+    /* --- TIPOGRAFIA --- */
+    --fonte-titulo:        'Exo 2', sans-serif;  /* Títulos e logótipo */
+    --fonte-corpo:         'Inter', sans-serif;  /* Texto corrido */
+
+    /* --- ESPAÇAMENTOS --- */
+    --espacamento-xs:      4px;
+    --espacamento-sm:      8px;
+    --espacamento-md:      16px;
+    --espacamento-lg:      24px;
+    --espacamento-xl:      40px;
+    --espacamento-2xl:     80px;
+
+    /* --- RAIOS DE BORDA --- */
+    --raio-sm:             6px;
+    --raio-md:             12px;
+    --raio-lg:             20px;
+    --raio-redondo:        9999px;
+
+    /* --- TRANSIÇÕES --- */
+    --transicao-rapida:    0.2s ease;
+    --transicao-normal:    0.35s ease;
+    --transicao-lenta:     0.6s ease;
+}
+
+
+/* =====================================================
+   2. RESET & BASE
+   Remove estilos padrão do navegador
+===================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scrolling suave ao clicar em links */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+ul {
+    list-style: none; /* Remove pontos das listas */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img, svg {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    font-family: var(--fonte-corpo);
+}
+
+
+/* =====================================================
+   3. TIPOGRAFIA
+===================================================== */
+h1, h2, h3, h4 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--cor-texto);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
+h3 { font-size: 1.3rem; }
+
+/* Texto com gradiente da marca */
+.texto-gradiente {
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.texto-ciano {
+    color: var(--cor-primaria);
+}
+
+
+/* =====================================================
+   4. UTILITÁRIOS
+===================================================== */
+
+/* Contentor central com largura máxima */
+.contentor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-xl);
+}
+
+/* Etiqueta pequena acima dos títulos */
+.etiqueta-seccao {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-md);
+}
+
+.etiqueta-destaque {
+    display: inline-block;
+    background: rgba(0, 229, 204, 0.1);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: var(--raio-redondo);
+    margin-bottom: var(--espacamento-lg);
+}
+
+/* Cabeçalho de secção centrado */
+.cabecalho-seccao {
+    text-align: center;
+    margin-bottom: var(--espacamento-2xl);
+}
+
+.cabecalho-seccao h2 {
+    margin-bottom: var(--espacamento-md);
+}
+
+.cabecalho-seccao p {
+    color: var(--cor-texto-suave);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+
+/* =====================================================
+   5. BOTÕES
+===================================================== */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--raio-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all var(--transicao-normal);
+    white-space: nowrap;
+}
+
+/* Botão principal — fundo ciano */
+.botao--primario {
+    background: var(--gradiente-principal);
+    color: var(--cor-texto-escuro);
+    border-color: transparent;
+}
+.botao--primario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 229, 204, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Botão contorno — só borda */
+.botao--contorno {
+    background: transparent;
+    color: var(--cor-texto);
+    border-color: var(--cor-borda-hover);
+}
+.botao--contorno:hover {
+    background: rgba(0, 229, 204, 0.08);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+/* Botão fantasma — muito subtil */
+.botao--fantasma {
+    background: transparent;
+    color: var(--cor-texto-suave);
+    border-color: transparent;
+}
+.botao--fantasma:hover {
+    color: var(--cor-primaria);
+}
+
+/* Tamanho grande */
+.botao--grande {
+    padding: 14px 32px;
+    font-size: 1rem;
+}
+
+/* Ícone SVG dentro do botão */
+.botao svg {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--transicao-rapida);
+}
+.botao:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   6. CABEÇALHO / NAVEGAÇÃO
+===================================================== */
+#cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 5%;
+    background: rgba(2, 15, 26, 0.85);
+    backdrop-filter: blur(12px);        /* Efeito vidro fosco */
+    border-bottom: 1px solid var(--cor-borda);
+    transition: padding var(--transicao-normal);
+}
+
+/* Cabeçalho fica mais compacto ao fazer scroll */
+#cabecalho.compacto {
+    padding: 10px 5%;
+}
+
+/* Logótipo */
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cor-texto);
+    letter-spacing: -0.5px;
+}
+
+.logotipo__icone {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+/* Links de navegação */
+.navegacao {
+    display: flex;
+    gap: var(--espacamento-xl);
+}
+
+.navegacao__link {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transicao-rapida);
+    position: relative;
+}
+
+.navegacao__link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--cor-primaria);
+    transition: width var(--transicao-normal);
+}
+
+.navegacao__link:hover {
+    color: var(--cor-primaria);
+}
+
+.navegacao__link:hover::after {
+    width: 100%;
+}
+
+/* Botões do cabeçalho */
+.botoes-auth {
+    display: flex;
+    gap: var(--espacamento-md);
+}
+
+/* Botão menu para mobile (escondido no desktop) */
+.btn-menu-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.btn-menu-mobile span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cor-texto);
+    border-radius: 2px;
+    transition: all var(--transicao-rapida);
+}
+
+
+/* =====================================================
+   7. SECÇÃO HERÓI (DESTAQUE PRINCIPAL)
+===================================================== */
+.heroi {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacamento-2xl);
+    padding: 120px 5% 80px;
+    background: var(--gradiente-fundo);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elementos decorativos de fundo (circuitos) */
+.heroi__fundo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none; /* Não interfere com cliques */
+    overflow: hidden;
+}
+
+.circuito {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--cor-borda);
+    animation: pulsar 6s ease-in-out infinite;
+}
+
+.circuito--1 {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.circuito--2 {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+.circuito--3 {
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 30%;
+    animation-delay: 4s;
+    border-style: dashed;
+}
+
+/* Conteúdo textual do herói */
+.heroi__conteudo {
+    flex: 1;
+    max-width: 600px;
+    animation: entrar-esquerda 0.8s ease both;
+}
+
+.heroi__titulo {
+    margin-bottom: var(--espacamento-lg);
+    letter-spacing: -1px;
+}
+
+.heroi__subtitulo {
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+    margin-bottom: var(--espacamento-xl);
+    max-width: 500px;
+}
+
+.heroi__acoes {
+    display: flex;
+    gap: var(--espacamento-md);
+    flex-wrap: wrap;
+}
+
+/* Painel de tecnologia (visual do lado direito) */
+.heroi__visual {
+    flex-shrink: 0;
+    animation: entrar-direita 0.8s ease 0.2s both;
+}
+
+.painel-tech {
+    background: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-lg);
+    padding: var(--espacamento-xl);
+    width: 300px;
+    box-shadow: var(--sombra-brilho);
+}
+
+.painel-tech__linha {
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-md);
+    margin-bottom: var(--espacamento-md);
+}
+
+/* Ponto de status colorido */
+.ponto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ponto--activo {
+    background: var(--cor-primaria);
+    box-shadow: 0 0 8px var(--cor-primaria);
+    animation: piscar 2s infinite;
+}
+
+.ponto--aviso {
+    background: #fbbf24;
+    box-shadow: 0 0 8px #fbbf24;
+}
+
+.painel-tech__label {
+    color: var(--cor-texto-suave);
+    font-size: 0.85rem;
+    flex: 1;
+}
+
+.painel-tech__valor {
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: var(--fonte-titulo);
+}
+
+.painel-tech__divisor {
+    height: 1px;
+    background: var(--cor-borda);
+    margin: var(--espacamento-lg) 0;
+}
+
+/* Mini gráfico de barras */
+.painel-tech__grafico {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 60px;
+    margin-bottom: var(--espacamento-md);
+}
+
+.barra {
+    flex: 1;
+    height: var(--altura);
+    background: var(--gradiente-principal);
+    border-radius: 4px 4px 0 0;
+    opacity: 0.7;
+    transition: opacity var(--transicao-rapida);
+    animation: crescer 1s ease both;
+}
+
+.barra:hover {
+    opacity: 1;
+}
+
+.painel-tech__rodape {
+    font-size: 0.75rem;
+    color: var(--cor-texto-suave);
+    text-align: center;
+}
+
+
+/* =====================================================
+   8. SECÇÃO DE SERVIÇOS
+===================================================== */
+.servicos {
+    padding: var(--espacamento-2xl) 0;
+    position: relative;
+}
+
+/* Grelha de cartões — 4 colunas no desktop, menos em mobile */
+.grelha-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--espacamento-lg);
+}
+
+.cartao-servico {
+    background: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-lg);
+    padding: var(--espacamento-xl) var(--espacamento-lg);
+    transition: all var(--transicao-normal);
+    position: relative;
+    overflow: hidden;
+
+    /* Animação de entrada escalonada */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Estado visível (activado pelo JavaScript) */
+.cartao-servico.visivel {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease calc(var(--atraso, 0) * 1ms),
+                transform 0.6s ease calc(var(--atraso, 0) * 1ms),
+                border-color var(--transicao-normal),
+                box-shadow var(--transicao-normal);
+}
+
+.cartao-servico:hover {
+    border-color: var(--cor-borda-hover);
+    box-shadow: var(--sombra-brilho);
+    transform: translateY(-6px);
+}
+
+/* Linha brilhante no topo do cartão ao hover */
+.cartao-servico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradiente-principal);
+    opacity: 0;
+    transition: opacity var(--transicao-normal);
+}
+
+.cartao-servico:hover::before {
+    opacity: 1;
+}
+
+/* Ícone do serviço */
+.cartao-servico__icone {
+    width: 52px;
+    height: 52px;
+    background: rgba(0, 229, 204, 0.1);
+    border-radius: var(--raio-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--espacamento-lg);
+    transition: background var(--transicao-normal);
+}
+
+.cartao-servico:hover .cartao-servico__icone {
+    background: rgba(0, 229, 204, 0.2);
+}
+
+.cartao-servico__icone svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--cor-primaria);
+}
+
+.cartao-servico h3 {
+    margin-bottom: var(--espacamento-md);
+    font-size: 1.2rem;
+}
+
+.cartao-servico p {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: var(--espacamento-lg);
+}
+
+.cartao-servico__link {
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: gap var(--transicao-rapida);
+}
+
+.cartao-servico__link:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   9. SECÇÃO DE ESTATÍSTICAS
+===================================================== */
+.estatisticas {
+    padding: var(--espacamento-2xl) 0;
+    background: rgba(0, 229, 204, 0.03);
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.grelha-estatisticas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--espacamento-xl);
+    text-align: center;
+}
+
+.stat-item {
+    padding: 0 var(--espacamento-xl);
+}
+
+.stat-numero {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.stat-unidade {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    display: inline;
+}
+
+.stat-descricao {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cor-texto-suave);
+    margin-top: 6px;
+}
+
+.divisor-stat {
+    width: 1px;
+    height: 60px;
+    background: var(--cor-borda);
+}
+
+
+/* =====================================================
+   10. SECÇÃO CTA (CHAMADA À ACÇÃO)
+===================================================== */
+.cta {
+    padding: var(--espacamento-2xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho no fundo */
+.cta::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 229, 204, 0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.cta__conteudo {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta__conteudo h2 {
+    margin: var(--espacamento-md) 0 var(--espacamento-lg);
+}
+
+.cta__conteudo p {
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+    margin-bottom: var(--espacamento-xl);
+}
+
+.cta__acoes {
+    display: flex;
+    gap: var(--espacamento-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   11. RODAPÉ
+===================================================== */
+.rodape {
+    background: var(--cor-fundo-cartao);
+    border-top: 1px solid var(--cor-borda);
+    padding: var(--espacamento-2xl) 0 var(--espacamento-lg);
+}
+
+.rodape__conteudo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--espacamento-2xl);
+    margin-bottom: var(--espacamento-xl);
+}
+
+.rodape__marca p {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    margin-top: var(--espacamento-md);
+    max-width: 280px;
+}
+
+.rodape__links h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cor-texto-suave);
+    margin-bottom: var(--espacamento-lg);
+}
+
+.rodape__links ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-md);
+}
+
+.rodape__links a {
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    transition: color var(--transicao-rapida);
+}
+
+.rodape__links a:hover {
+    color: var(--cor-primaria);
+}
+
+.rodape__base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--espacamento-lg);
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+    flex-wrap: wrap;
+    gap: var(--espacamento-md);
+}
+
+
+/* =====================================================
+   12. ANIMAÇÕES
+===================================================== */
+
+/* Entrada pela esquerda */
+@keyframes entrar-esquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Entrada pela direita */
+@keyframes entrar-direita {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulsação suave */
+@keyframes pulsar {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50%       { opacity: 0.6; transform: scale(1.03); }
+}
+
+/* Ponto a piscar */
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+/* Crescimento das barras */
+@keyframes crescer {
+    from { transform: scaleY(0); transform-origin: bottom; }
+    to   { transform: scaleY(1); transform-origin: bottom; }
+}
+
+
+/* =====================================================
+   13. MEDIA QUERIES — RESPONSIVIDADE MOBILE
+   Mobile first: começa pelo mais pequeno
+===================================================== */
+
+/* Tablets e telemóveis */
+@media (max-width: 900px) {
+
+    .heroi {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 5% 60px;
+    }
+
+    .heroi__acoes {
+        justify-content: center;
+    }
+
+    .heroi__visual {
+        width: 100%;
+    }
+
+    .painel-tech {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .rodape__conteudo {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rodape__marca {
+        grid-column: span 2;
+    }
+}
+
+/* Telemóveis pequenos */
+@media (max-width: 640px) {
+
+    .contentor {
+        padding: 0 var(--espacamento-lg);
+    }
+
+    /* Esconde a navegação e os botões no mobile */
+    .navegacao,
+    .botoes-auth {
+        display: none;
+    }
+
+    /* Mostra o botão de menu hambúrguer */
+    .btn-menu-mobile {
+        display: flex;
+    }
+
+    .heroi__acoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grelha-estatisticas {
+        flex-direction: column;
+    }
+
+    .divisor-stat {
+        width: 80px;
+        height: 1px;
+    }
+
+    .cta__acoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape__conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape__marca {
+        grid-column: span 1;
+    }
+
+    .rodape__base {
+        flex-direction: column;
+        text-align: center;
+    }
+}

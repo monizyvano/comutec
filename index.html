@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comutec | Tecnologia e Comunicação</title>
+
+    <!-- Fonte moderna e legível -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/pagina_inicial.css">
+</head>
+<body>
+
+    <!-- ========== CABEÇALHO / NAVEGAÇÃO ========== -->
+    <header id="cabecalho">
+        <a href="./index.html" class="logotipo">
+            <!-- Ícone SVG do logótipo -->
+            <svg class="logotipo__icone" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" stroke="url(#gradiente-logo)" stroke-width="2"/>
+                <path d="M12 20 C12 15, 20 10, 28 14 C24 18, 20 16, 16 22 C14 26, 16 30, 20 30 C24 30, 28 26, 28 22" stroke="url(#gradiente-logo)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <defs>
+                    <linearGradient id="gradiente-logo" x1="0" y1="0" x2="40" y2="40">
+                        <stop offset="0%" stop-color="#00e5cc"/>
+                        <stop offset="100%" stop-color="#0075ff"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>COMUTEC</span>
+        </a>
+
+        <!-- Navegação principal -->
+        <nav class="navegacao" id="navegacao">
+            <a href="#servicos" class="navegacao__link">Serviços</a>
+            <a href="#estatisticas" class="navegacao__link">Sobre</a>
+            <a href="#contacto" class="navegacao__link">Contacto</a>
+        </nav>
+
+        <!-- Botões de autenticação -->
+        <div class="botoes-auth">
+            <button id="btn-entrar" class="botao botao--contorno">Entrar</button>
+            <button id="btn-registar" class="botao botao--primario">Registar</button>
+        </div>
+
+        <!-- Botão menu para mobile -->
+        <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ========== SECÇÃO HERÓI (DESTAQUE PRINCIPAL) ========== -->
+    <section class="heroi" id="inicio">
+        <!-- Fundo animado com partículas/circuitos -->
+        <div class="heroi__fundo">
+            <div class="circuito circuito--1"></div>
+            <div class="circuito circuito--2"></div>
+            <div class="circuito circuito--3"></div>
+        </div>
+
+        <!-- Conteúdo principal do herói -->
+        <div class="heroi__conteudo">
+            <span class="etiqueta-destaque">🚀 Tecnologia & Comunicação — Angola</span>
+            <h1 class="heroi__titulo">
+                A sua infraestrutura<br>
+                em <span class="texto-gradiente">boas mãos.</span>
+            </h1>
+            <p class="heroi__subtitulo">
+                Soluções inteligentes em Hardware, Software e Cibersegurança,
+                desenvolvidas para escalar o seu negócio com segurança e performance.
+            </p>
+
+            <!-- Botões de chamada à acção -->
+            <div class="heroi__acoes">
+                <button id="btn-comecar" class="botao botao--primario botao--grande">
+                    Começar Agora
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#servicos" class="botao botao--fantasma botao--grande">Ver Serviços</a>
+            </div>
+        </div>
+
+        <!-- Imagem / Visual lateral -->
+        <div class="heroi__visual">
+            <div class="painel-tech">
+                <div class="painel-tech__linha">
+                    <span class="ponto ponto--activo"></span>
+                    <span class="painel-tech__label">Sistema Online</span>
+                    <span class="painel-tech__valor texto-ciano">Activo</span>
+                </div>
+                <div class="painel-tech__linha">
+                    <span class="ponto ponto--aviso"></span>
+                    <span class="painel-tech__label">Segurança</span>
+                    <span class="painel-tech__valor">100%</span>
+                </div>
+                <div class="painel-tech__linha">
+                    <span class="ponto ponto--activo"></span>
+                    <span class="painel-tech__label">Uptime</span>
+                    <span class="painel-tech__valor texto-ciano">99.9%</span>
+                </div>
+                <div class="painel-tech__divisor"></div>
+                <div class="painel-tech__grafico">
+                    <div class="barra" style="--altura: 60%"></div>
+                    <div class="barra" style="--altura: 80%"></div>
+                    <div class="barra" style="--altura: 45%"></div>
+                    <div class="barra" style="--altura: 90%"></div>
+                    <div class="barra" style="--altura: 70%"></div>
+                    <div class="barra" style="--altura: 95%"></div>
+                    <div class="barra" style="--altura: 75%"></div>
+                </div>
+                <p class="painel-tech__rodape">Monitorização em tempo real</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECÇÃO DE SERVIÇOS ========== -->
+    <section class="servicos" id="servicos">
+        <div class="contentor">
+            <div class="cabecalho-seccao">
+                <span class="etiqueta-seccao">O QUE FAZEMOS</span>
+                <h2>Soluções que entregamos</h2>
+                <p>Do hardware ao software, cobrimos tudo o que a sua empresa precisa para crescer com confiança.</p>
+            </div>
+
+            <!-- Grelha de cartões de serviços -->
+            <div class="grelha-servicos">
+
+                <!-- Cartão 1: Hardware -->
+                <div class="cartao-servico" data-atraso="0">
+                    <div class="cartao-servico__icone">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20,13H4V11H20M7,19H17V17H7M10,5H14V7H10M22,3H2V21H22V3Z"/>
+                        </svg>
+                    </div>
+                    <h3>Hardware & Redes</h3>
+                    <p>Montagem de servidores de alta performance, redes estruturadas e manutenção preventiva para evitar paragens inesperadas.</p>
+                    <a href="#" class="cartao-servico__link">Saber mais →</a>
+                </div>
+
+                <!-- Cartão 2: Software -->
+                <div class="cartao-servico" data-atraso="100">
+                    <div class="cartao-servico__icone">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"/>
+                        </svg>
+                    </div>
+                    <h3>Sistemas Web</h3>
+                    <p>Criação de softwares personalizados e automação de processos internos com tecnologias modernas e seguras.</p>
+                    <a href="#" class="cartao-servico__link">Saber mais →</a>
+                </div>
+
+                <!-- Cartão 3: Cibersegurança -->
+                <div class="cartao-servico" data-atraso="200">
+                    <div class="cartao-servico__icone">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.1,7 14,7.9 14,9C14,10.1 13.1,11 12,11C10.9,11 10,10.1 10,9C10,7.9 10.9,7 12,7M12,13C13.33,13 16,13.67 16,15V16H8V15C8,13.67 10.67,13 12,13Z"/>
+                        </svg>
+                    </div>
+                    <h3>Cibersegurança</h3>
+                    <p>Auditoria de sistemas e implementação de camadas de protecção para garantir que os seus dados estejam sempre blindados.</p>
+                    <a href="#" class="cartao-servico__link">Saber mais →</a>
+                </div>
+
+                <!-- Cartão 4: Suporte -->
+                <div class="cartao-servico" data-atraso="300">
+                    <div class="cartao-servico__icone">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Suporte Técnico</h3>
+                    <p>Assistência técnica presencial e remota 24 horas por dia, 7 dias por semana, para manter o seu negócio sempre a funcionar.</p>
+                    <a href="#" class="cartao-servico__link">Saber mais →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECÇÃO DE ESTATÍSTICAS ========== -->
+    <section class="estatisticas" id="estatisticas">
+        <div class="contentor">
+            <div class="grelha-estatisticas">
+                <div class="stat-item">
+                    <h4 class="stat-numero" data-valor="24">0</h4>
+                    <p class="stat-unidade">horas</p>
+                    <p class="stat-descricao">Monitorização</p>
+                </div>
+                <div class="divisor-stat"></div>
+                <div class="stat-item">
+                    <h4 class="stat-numero" data-valor="100">0</h4>
+                    <p class="stat-unidade">%</p>
+                    <p class="stat-descricao">Segurança</p>
+                </div>
+                <div class="divisor-stat"></div>
+                <div class="stat-item">
+                    <h4 class="stat-numero" data-valor="500">0</h4>
+                    <p class="stat-unidade">+</p>
+                    <p class="stat-descricao">Atendimentos</p>
+                </div>
+                <div class="divisor-stat"></div>
+                <div class="stat-item">
+                    <h4 class="stat-numero" data-valor="99">0</h4>
+                    <p class="stat-unidade">.9%</p>
+                    <p class="stat-descricao">Uptime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECÇÃO CTA (CHAMADA À ACÇÃO FINAL) ========== -->
+    <section class="cta" id="contacto">
+        <div class="contentor">
+            <div class="cta__conteudo">
+                <span class="etiqueta-seccao">PRONTO PARA COMEÇAR?</span>
+                <h2>Leve a sua empresa<br>ao próximo nível</h2>
+                <p>Registe a sua empresa hoje e tenha acesso a todas as nossas soluções tecnológicas.</p>
+                <div class="cta__acoes">
+                    <button id="btn-cta-registar" class="botao botao--primario botao--grande">
+                        Registar Empresa
+                    </button>
+                    <a href="tel:+244900000000" class="botao botao--contorno botao--grande">
+                        📞 +244 900 000 000
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RODAPÉ ========== -->
+    <footer class="rodape">
+        <div class="contentor">
+            <div class="rodape__conteudo">
+                <div class="rodape__marca">
+                    <a href="#" class="logotipo">
+                        <svg class="logotipo__icone" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="url(#g2)" stroke-width="2"/>
+                            <path d="M12 20 C12 15, 20 10, 28 14 C24 18, 20 16, 16 22 C14 26, 16 30, 20 30 C24 30, 28 26, 28 22" stroke="url(#g2)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                            <defs>
+                                <linearGradient id="g2" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#00e5cc"/>
+                                    <stop offset="100%" stop-color="#0075ff"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>COMUTEC</span>
+                    </a>
+                    <p>Tecnologia e Comunicação ao serviço do seu negócio em Angola.</p>
+                </div>
+
+                <div class="rodape__links">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Hardware & Redes</a></li>
+                        <li><a href="#">Sistemas Web</a></li>
+                        <li><a href="#">Cibersegurança</a></li>
+                        <li><a href="#">Suporte Técnico</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape__links">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre nós</a></li>
+                        <li><a href="#">Portfólio</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape__base">
+                <p>&copy; 2026 Comutec Soluções Tecnológicas. Todos os direitos reservados.</p>
+                <p>Luanda, Angola</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="../js/pagina_inicial.js"></script>
+</body>
+</html>
