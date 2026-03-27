@@ -4,47 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comutec | Entrar</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 
-    <!-- Fundo decorativo -->
     <div class="fundo-decorativo">
         <div class="circulo circulo--1"></div>
         <div class="circulo circulo--2"></div>
     </div>
 
-    <!-- Contentor principal do formulário de login -->
     <div class="caixa-login">
 
-        <!-- Logótipo e cabeçalho -->
+        <!-- Área do logótipo com imagem real -->
         <div class="area-logo">
             <a href="../index.html" class="logotipo">
-                <svg class="logotipo__icone" viewBox="0 0 40 40" fill="none">
-                    <circle cx="20" cy="20" r="18" stroke="url(#gl)" stroke-width="2"/>
-                    <path d="M12 20 C12 15, 20 10, 28 14 C24 18, 20 16, 16 22 C14 26, 16 30, 20 30 C24 30, 28 26, 28 22" stroke="url(#gl)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                    <defs>
-                        <linearGradient id="gl" x1="0" y1="0" x2="40" y2="40">
-                            <stop offset="0%" stop-color="#00e5cc"/>
-                            <stop offset="100%" stop-color="#0075ff"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <span>COMUTEC</span>
+                <!-- Logo redondo oficial -->
+                <img src="../assets/logoComutecR.jpg" alt="Comutec" class="logotipo__img-redondo">
+                <div class="logotipo__texto">
+                    <span class="logotipo__nome">
+                        <span class="nome-comu">COMU</span><span class="nome-tec">TEC</span>
+                    </span>
+                    <span class="logotipo__slogan">Tecnologia e Comunicação</span>
+                </div>
             </a>
             <h1>Bem-vindo de volta</h1>
             <p>Aceda ao seu painel de controlo</p>
         </div>
 
-        <!-- Formulário de login -->
         <form id="formulario-login" novalidate>
 
-            <!-- Campo: E-mail -->
             <div class="grupo-campo">
                 <label for="email">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -53,18 +44,10 @@
                     </svg>
                     E-mail
                 </label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="exemplo@comutec.ao"
-                    autocomplete="email"
-                    required
-                >
+                <input type="email" id="email" name="email" placeholder="exemplo@comutec.ao" autocomplete="email" required>
                 <span class="mensagem-erro" id="erro-email"></span>
             </div>
 
-            <!-- Campo: Palavra-passe -->
             <div class="grupo-campo">
                 <label for="palavra-passe">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -74,15 +57,7 @@
                     Palavra-passe
                 </label>
                 <div class="campo-com-icone">
-                    <input
-                        type="password"
-                        id="palavra-passe"
-                        name="palavra-passe"
-                        placeholder="••••••••"
-                        autocomplete="current-password"
-                        required
-                    >
-                    <!-- Botão para mostrar/esconder a palavra-passe -->
+                    <input type="password" id="palavra-passe" name="palavra-passe" placeholder="••••••••" autocomplete="current-password" required>
                     <button type="button" class="btn-ver-senha" id="btn-ver-senha" aria-label="Mostrar palavra-passe">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -93,10 +68,8 @@
                 <span class="mensagem-erro" id="erro-senha"></span>
             </div>
 
-            <!-- Link "esqueceu a senha" -->
-            <a href="#" class="link-esqueceu">Esqueceu-se da palavra-passe?</a>
+            <a href="/html/recuperar.html" class="link-esqueceu">Esqueceu-se da palavra-passe?</a>
 
-            <!-- Botão de submissão -->
             <button type="submit" class="botao-entrar" id="btn-entrar">
                 <span>Entrar</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -107,15 +80,10 @@
             </button>
         </form>
 
-        <!-- Link para o cadastro -->
         <div class="rodape-formulario">
             Não tem conta? <a href="cadastro.html">Registar empresa</a>
         </div>
-
-        <!-- Voltar à página inicial -->
-        <a href="../index.html" class="link-voltar">
-            ← Voltar à página inicial
-        </a>
+        <a href="../index.html" class="link-voltar">← Voltar à página inicial</a>
     </div>
 
     <script src="../js/login.js"></script>

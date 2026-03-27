@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comutec | Recuperar Palavra-passe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/recuperar.css">
+</head>
+<body>
+
+    <!-- Fundo decorativo -->
+    <div class="fundo-decorativo">
+        <div class="circulo circulo--1"></div>
+        <div class="circulo circulo--2"></div>
+    </div>
+
+    <!-- =====================================================
+         CAIXA PRINCIPAL
+         Tem 3 etapas que o JavaScript vai mostrar/esconder:
+         · Etapa 1: utilizador escreve o e-mail
+         · Etapa 2: utilizador escreve o código recebido
+         · Etapa 3: utilizador define a nova palavra-passe
+    ===================================================== -->
+    <div class="caixa-recuperar" id="caixa-principal">
+
+        <!-- Logótipo -->
+        <a href="../index.html" class="logotipo">
+            <img src="../assets/logoComutecR.jpg" alt="Comutec" class="logotipo__img-redondo">
+            <div class="logotipo__texto">
+                <span class="logotipo__nome">
+                    <span class="nome-comu">COMU</span><span class="nome-tec">TEC</span>
+                </span>
+                <span class="logotipo__slogan">Tecnologia e Comunicação</span>
+            </div>
+        </a>
+
+        <!-- ── INDICADOR DE PROGRESSO (3 passos) ── -->
+        <div class="progresso" id="indicador-progresso">
+            <div class="progresso__passo activo" id="passo-1">
+                <div class="progresso__circulo">1</div>
+                <span class="progresso__texto">E-mail</span>
+            </div>
+            <div class="progresso__linha" id="linha-1-2"></div>
+            <div class="progresso__passo" id="passo-2">
+                <div class="progresso__circulo">2</div>
+                <span class="progresso__texto">Código</span>
+            </div>
+            <div class="progresso__linha" id="linha-2-3"></div>
+            <div class="progresso__passo" id="passo-3">
+                <div class="progresso__circulo">3</div>
+                <span class="progresso__texto">Nova senha</span>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════
+             ETAPA 1 — Inserir o e-mail
+        ══════════════════════════════════════ -->
+        <div class="etapa" id="etapa-1">
+            <div class="etapa__cabecalho">
+                <!-- Ícone de envelope -->
+                <div class="icone-circulo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <h1>Recuperar Palavra-passe</h1>
+                <p>Insira o e-mail associado à sua conta.<br>Enviaremos um código de verificação.</p>
+            </div>
+
+            <form id="formulario-email" novalidate>
+                <div class="grupo-campo">
+                    <label for="email">E-mail Corporativo</label>
+                    <div class="campo-com-icone">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemplo@comutec.ao"
+                            autocomplete="email"
+                            required
+                        >
+                        <!-- Ícone dentro do campo -->
+                        <span class="campo__icone-esquerda">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="mensagem-erro" id="erro-email"></span>
+                </div>
+
+                <button type="submit" class="botao-principal" id="btn-enviar-email">
+                    <span>Enviar Código</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+
+        <!-- ══════════════════════════════════════
+             ETAPA 2 — Verificar o código
+        ══════════════════════════════════════ -->
+        <div class="etapa escondida" id="etapa-2">
+            <div class="etapa__cabecalho">
+                <!-- Ícone de escudo com cadeado -->
+                <div class="icone-circulo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <circle cx="12" cy="11" r="2"/>
+                        <path d="M12 13v2"/>
+                    </svg>
+                </div>
+                <h1>Verificar Código</h1>
+                <p id="texto-email-enviado">
+                    Enviámos um código de 6 dígitos para<br>
+                    <strong id="email-destino" class="texto-verde">—</strong>
+                </p>
+            </div>
+
+            <!-- Campos de código: 6 caixas individuais -->
+            <div class="campos-codigo" id="campos-codigo">
+                <input type="text" maxlength="1" class="campo-codigo" inputmode="numeric" pattern="[0-9]" aria-label="Dígito 1">
+                <input type="text" maxlength="1" class="campo-codigo" inputmode="numeric" pattern="[0-9]" aria-label="Dígito 2">
+                <input type="text" maxlength="1" class="campo-codigo" inputmode="numeric" pattern="[0-9]" aria-label="Dígito 3">
+                <input type="text" maxlength="1" class="campo-codigo" inputmode="numeric" pattern="[0-9]" aria-label="Dígito 4">
+                <input type="text" maxlength="1" class="campo-codigo" inputmode="numeric" pattern="[0-9]" aria-label="Dígito 5">
+                <input type="text" maxlength="1" class="campo-codigo" inputmode="numeric" pattern="[0-9]" aria-label="Dígito 6">
+            </div>
+            <span class="mensagem-erro centrada" id="erro-codigo"></span>
+
+            <!-- Temporizador de reenvio -->
+            <div class="temporizador" id="bloco-temporizador">
+                <span class="temporizador__texto">Reenviar código em </span>
+                <span class="temporizador__contador" id="contador">02:00</span>
+            </div>
+            <button class="link-reenviar escondida" id="btn-reenviar">
+                Não recebeu? <span>Reenviar código</span>
+            </button>
+
+            <button class="botao-principal" id="btn-verificar-codigo">
+                <span>Verificar Código</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </button>
+        </div>
+
+
+        <!-- ══════════════════════════════════════
+             ETAPA 3 — Nova palavra-passe
+        ══════════════════════════════════════ -->
+        <div class="etapa escondida" id="etapa-3">
+            <div class="etapa__cabecalho">
+                <!-- Ícone de cadeado aberto -->
+                <div class="icone-circulo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                    </svg>
+                </div>
+                <h1>Nova Palavra-passe</h1>
+                <p>Escolha uma palavra-passe segura<br>para a sua conta.</p>
+            </div>
+
+            <form id="formulario-nova-senha" novalidate>
+
+                <div class="grupo-campo">
+                    <label for="nova-senha">Nova Palavra-passe</label>
+                    <div class="campo-com-icone">
+                        <input
+                            type="password"
+                            id="nova-senha"
+                            name="nova_senha"
+                            placeholder="Mínimo 8 caracteres"
+                            required
+                        >
+                        <button type="button" class="btn-ver-senha" id="btn-ver-nova" aria-label="Mostrar senha">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Forcômetro de segurança -->
+                    <div class="forcometro">
+                        <div class="forcometro__barra" id="barra-forca"></div>
+                    </div>
+                    <span class="forcometro__texto" id="texto-forca"></span>
+                    <span class="mensagem-erro" id="erro-nova-senha"></span>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="confirmar-senha">Confirmar Palavra-passe</label>
+                    <div class="campo-com-icone">
+                        <input
+                            type="password"
+                            id="confirmar-senha"
+                            name="confirmar_senha"
+                            placeholder="Repita a nova senha"
+                            required
+                        >
+                        <button type="button" class="btn-ver-senha" id="btn-ver-confirmar" aria-label="Mostrar senha">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="mensagem-erro" id="erro-confirmar"></span>
+                </div>
+
+                <!-- Lista de requisitos da senha -->
+                <ul class="requisitos-senha" id="requisitos">
+                    <li class="requisito" id="req-tamanho">
+                        <span class="requisito__icone">○</span> Mínimo 8 caracteres
+                    </li>
+                    <li class="requisito" id="req-maiuscula">
+                        <span class="requisito__icone">○</span> Pelo menos 1 letra maiúscula
+                    </li>
+                    <li class="requisito" id="req-numero">
+                        <span class="requisito__icone">○</span> Pelo menos 1 número
+                    </li>
+                    <li class="requisito" id="req-simbolo">
+                        <span class="requisito__icone">○</span> Pelo menos 1 símbolo (!@#...)
+                    </li>
+                </ul>
+
+                <button type="submit" class="botao-principal" id="btn-guardar-senha">
+                    <span>Guardar Nova Senha</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+
+        <!-- ══════════════════════════════════════
+             ETAPA 4 — Sucesso (confirmação final)
+        ══════════════════════════════════════ -->
+        <div class="etapa escondida" id="etapa-sucesso">
+            <div class="etapa__cabecalho">
+                <!-- Ícone de sucesso animado -->
+                <div class="icone-circulo icone-circulo--sucesso" id="icone-sucesso">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h1>Senha Actualizada!</h1>
+                <p>A sua palavra-passe foi alterada<br>com sucesso.</p>
+            </div>
+
+            <div class="caixa-info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <p>Pode agora entrar na sua conta com a nova palavra-passe.</p>
+            </div>
+
+            <!-- Contagem regressiva para redireccionar -->
+            <p class="texto-redireccionar">
+                A ser redirecionado em <span class="contador-redir" id="contador-redir">5</span>s...
+            </p>
+
+            <a href="login.html" class="botao-principal botao-principal--link">
+                <span>Ir para o Login</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                    <polyline points="10 17 15 12 10 7"/>
+                    <line x1="15" y1="12" x2="3" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+
+        <!-- Rodapé com link para voltar ao login -->
+        <div class="rodape-formulario">
+            Lembrou-se da senha? <a href="/html/login.html">Voltar ao Login</a>
+        </div>
+
+    </div><!-- fim .caixa-recuperar -->
+
+    <script src="../js/recuperar.js"></script>
+</body>
+</html>

@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    /* Validar NIF angolano (9 dígitos) */
+    /* Validar NIF angolano (13 dígitos) */
     function nifValido(nif) {
-        return /^\d{9}$/.test(nif);
+        return /^\d{13}$/.test(nif);
     }
 
     /* Validar contacto telefónico */
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         /* --- Validar NIF --- */
         if (!nifValido(nif)) {
-            mostrarErro(campoNif, 'nif', 'O NIF deve ter exactamente 9 dígitos.');
+            mostrarErro(campoNif, 'nif', 'O NIF deve ter exactamente 13 dígitos.');
             valido = false;
         }
 

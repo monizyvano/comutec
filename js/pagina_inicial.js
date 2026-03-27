@@ -35,28 +35,28 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Botão "Entrar" → vai para a página de login */
     if (btnEntrar) {
         btnEntrar.addEventListener('click', function () {
-            window.location.href = 'html/login.html';
+            window.location.href = '/html/login.html';
         });
     }
 
     /* Botão "Registar" no cabeçalho → vai para cadastro */
     if (btnRegistar) {
         btnRegistar.addEventListener('click', function () {
-            window.location.href = 'html/cadastro.html';
+            window.location.href = '/html/cadastro.html';
         });
     }
 
     /* Botão "Registar Empresa" na secção CTA → vai para cadastro */
     if (btnCtaRegistar) {
         btnCtaRegistar.addEventListener('click', function () {
-            window.location.href = 'html/cadastro.html';
+            window.location.href = '/html/cadastro.html';
         });
     }
 
     /* Botão "Começar Agora" no herói → vai para cadastro */
     if (btnComecar) {
         btnComecar.addEventListener('click', function () {
-            window.location.href = 'html/cadastro.html';
+            window.location.href = '/html/cadastro.html';
         });
     }
 

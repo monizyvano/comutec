@@ -1,59 +1,38 @@
 /* =====================================================
-   COMUTEC — Estilos da Página de Cadastro/Registo
-   Ficheiro: cadastro.css
+   COMUTEC — Estilos da Página de Cadastro
+   Ficheiro: css/cadastro.css
+   Versão: 3.0 — Identidade Visual Oficial
 ===================================================== */
 
 :root {
-    /* --- CORES PRINCIPAIS --- */
-    --cor-fundo:           #020f1a;
-    --cor-fundo-cartao:    #071e33;
-    --cor-primaria:        #00e5cc;
-    --cor-secundaria:      #0075ff;
-
-    /* --- GRADIENTES --- */
-    --gradiente-principal: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-
-    /* --- TEXTO --- */
-    --cor-texto:           #f0f9ff;
-    --cor-texto-suave:     #7bafc8;
-    --cor-texto-escuro:    #020f1a;
-
-    /* --- BORDAS & FEEDBACK --- */
-    --cor-borda:           rgba(0, 229, 204, 0.15);
-    --cor-borda-hover:     rgba(0, 229, 204, 0.5);
-    --cor-erro:            #f87171;
-    --cor-sucesso:         #34d399;
-    --cor-aviso:           #fbbf24;
-
-    /* --- TIPOGRAFIA --- */
-    --fonte-titulo:        'Exo 2', sans-serif;
-    --fonte-corpo:         'Inter', sans-serif;
-
-    /* --- ESPAÇAMENTOS --- */
-    --espacamento-sm:      8px;
-    --espacamento-md:      16px;
-    --espacamento-lg:      24px;
-    --espacamento-xl:      40px;
-
-    /* --- RAIOS --- */
-    --raio-sm:             6px;
-    --raio-md:             12px;
-    --raio-lg:             20px;
-
-    /* --- TRANSIÇÕES --- */
-    --transicao-rapida:    0.2s ease;
-    --transicao-normal:    0.35s ease;
+    --cor-fundo:            #020f1a;
+    --cor-fundo-cartao:     #071e33;
+    --cor-primaria:         #43c463;   /* Verde — TEC */
+    --cor-secundaria:       #1a6fca;   /* Azul — COMU */
+    --cor-secundaria-clara: #3a9aff;
+    --gradiente-principal:  linear-gradient(135deg, var(--cor-secundaria), var(--cor-primaria));
+    --cor-texto:            #f0f9ff;
+    --cor-texto-suave:      #7bafc8;
+    --cor-texto-escuro:     #020f1a;
+    --cor-borda:            rgba(67, 196, 99, 0.18);
+    --cor-borda-hover:      rgba(67, 196, 99, 0.55);
+    --cor-erro:             #f87171;
+    --cor-sucesso:          #34d399;
+    --cor-aviso:            #fbbf24;
+    --fonte-titulo:         'Exo 2', sans-serif;
+    --fonte-corpo:          'Inter', sans-serif;
+    --espacamento-sm:       8px;
+    --espacamento-md:       16px;
+    --espacamento-lg:       24px;
+    --espacamento-xl:       40px;
+    --raio-sm:              6px;
+    --raio-md:              12px;
+    --raio-lg:              20px;
+    --transicao-rapida:     0.2s ease;
+    --transicao-normal:     0.35s ease;
 }
 
-
-/* =====================================================
-   RESET & BASE
-===================================================== */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--cor-fundo);
@@ -67,44 +46,11 @@ body {
     position: relative;
 }
 
+.fundo-decorativo { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.circulo { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.1; }
+.circulo--1 { width: 500px; height: 500px; background: var(--cor-primaria); top: -200px; left: -100px; }
+.circulo--2 { width: 400px; height: 400px; background: var(--cor-secundaria); bottom: -100px; right: -100px; }
 
-/* =====================================================
-   FUNDO DECORATIVO
-===================================================== */
-.fundo-decorativo {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.circulo {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.1;
-}
-
-.circulo--1 {
-    width: 500px;
-    height: 500px;
-    background: var(--cor-primaria);
-    top: -200px;
-    left: -100px;
-}
-
-.circulo--2 {
-    width: 400px;
-    height: 400px;
-    background: var(--cor-secundaria);
-    bottom: -100px;
-    right: -100px;
-}
-
-
-/* =====================================================
-   CAIXA DE REGISTO
-===================================================== */
 .caixa-registo {
     position: relative;
     z-index: 1;
@@ -114,191 +60,132 @@ body {
     padding: var(--espacamento-xl);
     width: 100%;
     max-width: 680px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     animation: aparecer 0.6s ease both;
 }
 
-
-/* =====================================================
-   CABEÇALHO
-===================================================== */
-.cabecalho-registo {
-    text-align: center;
-    margin-bottom: var(--espacamento-xl);
-}
+/* ── Cabeçalho com logótipo real ── */
+.cabecalho-registo { text-align: center; margin-bottom: var(--espacamento-xl); }
 
 .logotipo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-family: var(--fonte-titulo);
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--cor-texto);
     text-decoration: none;
+    color: var(--cor-texto);
     margin-bottom: var(--espacamento-md);
 }
 
-.logotipo__icone {
-    width: 36px;
-    height: 36px;
+.logotipo__img-redondo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 0 14px rgba(67,196,99,0.4);
+    flex-shrink: 0;
 }
 
-.cabecalho-registo h1 {
+.logotipo__texto { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+
+.logotipo__nome {
     font-family: var(--fonte-titulo);
-    font-size: 1.6rem;
-    margin-bottom: 6px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
+.nome-comu { color: var(--cor-secundaria-clara); }
+.nome-tec  { color: var(--cor-primaria); }
 
-.cabecalho-registo p {
+.logotipo__slogan {
+    font-size: 0.58rem;
     color: var(--cor-texto-suave);
-    font-size: 0.9rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
 }
 
+.cabecalho-registo h1 { font-family: var(--fonte-titulo); font-size: 1.6rem; margin-bottom: 6px; }
+.cabecalho-registo p  { color: var(--cor-texto-suave); font-size: 0.9rem; }
 
-/* =====================================================
-   FORMULÁRIO EM GRELHA DE 2 COLUNAS
-===================================================== */
+/* Grelha 2 colunas */
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* 2 colunas iguais */
+    grid-template-columns: 1fr 1fr;
     gap: var(--espacamento-lg);
 }
+.largura-total { grid-column: span 2; }
 
-/* Classe para ocupar as 2 colunas */
-.largura-total {
-    grid-column: span 2;
-}
+.grupo-campo { display: flex; flex-direction: column; gap: var(--espacamento-sm); }
 
+label { font-size: 0.85rem; font-weight: 600; color: var(--cor-texto-suave); }
 
-/* =====================================================
-   GRUPOS DE CAMPO
-===================================================== */
-.grupo-campo {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacamento-sm);
-}
-
-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--cor-texto-suave);
-}
-
-/* Campo de texto */
 input {
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0,0,0,0.3);
     border: 1px solid var(--cor-borda);
     padding: 12px 16px;
     border-radius: var(--raio-md);
     color: var(--cor-texto);
     font-size: 0.95rem;
     font-family: var(--fonte-corpo);
-    transition: border-color var(--transicao-rapida),
-                box-shadow var(--transicao-rapida);
+    transition: border-color var(--transicao-rapida), box-shadow var(--transicao-rapida);
 }
-
 input:focus {
     outline: none;
     border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 3px rgba(0, 229, 204, 0.15);
+    box-shadow: 0 0 0 3px rgba(67,196,99,0.15);
 }
+input::placeholder { color: rgba(123,175,200,0.5); }
+input.com-erro { border-color: var(--cor-erro); box-shadow: 0 0 0 3px rgba(248,113,113,0.15); }
 
-input::placeholder {
-    color: rgba(123, 175, 200, 0.5);
-}
+.mensagem-erro { font-size: 0.8rem; color: var(--cor-erro); min-height: 16px; }
 
-input.com-erro {
-    border-color: var(--cor-erro);
-    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15);
-}
-
-/* Mensagem de erro */
-.mensagem-erro {
-    font-size: 0.8rem;
-    color: var(--cor-erro);
-    min-height: 16px;
-}
-
-/* Contentor input + botão de ver senha */
-.campo-com-icone {
-    position: relative;
-}
+.campo-com-icone { position: relative; }
 
 .btn-ver-senha {
     position: absolute;
-    right: 12px;
-    top: 50%;
+    right: 12px; top: 50%;
     transform: translateY(-50%);
-    background: none;
-    border: none;
+    background: none; border: none;
     color: var(--cor-texto-suave);
-    cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
+    cursor: pointer; padding: 4px;
+    display: flex; align-items: center;
     transition: color var(--transicao-rapida);
 }
+.btn-ver-senha:hover { color: var(--cor-primaria); }
+.btn-ver-senha svg  { width: 18px; height: 18px; }
 
-.btn-ver-senha:hover {
-    color: var(--cor-primaria);
-}
-
-.btn-ver-senha svg {
-    width: 18px;
-    height: 18px;
-}
-
-
-/* =====================================================
-   INDICADOR DE FORÇA DA PALAVRA-PASSE
-===================================================== */
+/* Forcômetro */
 .forcometro {
     height: 4px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.08);
     border-radius: var(--raio-sm);
     overflow: hidden;
     margin-top: 4px;
 }
-
 .forcometro__barra {
-    height: 100%;
-    width: 0%;                        /* Começa sem largura */
+    height: 100%; width: 0%;
     border-radius: var(--raio-sm);
     transition: width 0.4s ease, background-color 0.4s ease;
 }
+.forcometro__barra.fraca { width: 33%; background: var(--cor-erro); }
+.forcometro__barra.media { width: 66%; background: var(--cor-aviso); }
+.forcometro__barra.forte { width: 100%; background: var(--cor-sucesso); }
 
-/* Cores por nível de força */
-.forcometro__barra.fraca    { width: 33%; background: var(--cor-erro); }
-.forcometro__barra.media    { width: 66%; background: var(--cor-aviso); }
-.forcometro__barra.forte    { width: 100%; background: var(--cor-sucesso); }
+.forcometro__texto { font-size: 0.75rem; margin-top: 4px; min-height: 16px; font-weight: 600; }
+.forcometro__texto.fraca { color: var(--cor-erro); }
+.forcometro__texto.media { color: var(--cor-aviso); }
+.forcometro__texto.forte { color: var(--cor-sucesso); }
 
-.forcometro__texto {
-    font-size: 0.75rem;
-    margin-top: 4px;
-    min-height: 16px;
-    font-weight: 600;
-}
-
-.forcometro__texto.fraca  { color: var(--cor-erro); }
-.forcometro__texto.media  { color: var(--cor-aviso); }
-.forcometro__texto.forte  { color: var(--cor-sucesso); }
-
-
-/* =====================================================
-   ACÇÕES DO FORMULÁRIO (BOTÕES)
-===================================================== */
+/* Botões */
 .acoes-formulario {
-    grid-column: span 2;     /* Ocupa toda a largura */
+    grid-column: span 2;
     display: flex;
     flex-direction: column;
     gap: var(--espacamento-md);
     margin-top: var(--espacamento-sm);
 }
 
-/* Botão de submissão */
 .botao-submeter {
     display: flex;
     align-items: center;
@@ -307,7 +194,7 @@ input.com-erro {
     width: 100%;
     padding: 14px;
     background: var(--gradiente-principal);
-    color: var(--cor-texto-escuro);
+    color: var(--cor-texto);
     border: none;
     border-radius: var(--raio-md);
     font-size: 1rem;
@@ -316,28 +203,15 @@ input.com-erro {
     cursor: pointer;
     transition: all var(--transicao-normal);
 }
-
 .botao-submeter:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 229, 204, 0.35);
+    box-shadow: 0 8px 25px rgba(67,196,99,0.35);
     filter: brightness(1.1);
 }
+.botao-submeter:active { transform: translateY(0); }
+.botao-submeter.carregando { opacity: 0.8; pointer-events: none; }
+.botao-submeter svg { width: 18px; height: 18px; }
 
-.botao-submeter:active {
-    transform: translateY(0);
-}
-
-.botao-submeter.carregando {
-    opacity: 0.8;
-    pointer-events: none;
-}
-
-.botao-submeter svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* Links do rodapé do formulário */
 .links-rodape {
     display: flex;
     justify-content: space-between;
@@ -347,70 +221,20 @@ input.com-erro {
     flex-wrap: wrap;
     gap: var(--espacamento-sm);
 }
+.links-rodape a { color: var(--cor-primaria); font-weight: 600; text-decoration: none; transition: opacity var(--transicao-rapida); }
+.links-rodape a:hover { opacity: 0.8; text-decoration: underline; }
+.link-voltar { color: var(--cor-texto-suave) !important; font-weight: 400 !important; }
+.link-voltar:hover { color: var(--cor-primaria) !important; }
 
-.links-rodape a {
-    color: var(--cor-primaria);
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity var(--transicao-rapida);
-}
-
-.links-rodape a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-
-.link-voltar {
-    color: var(--cor-texto-suave) !important;
-    font-weight: 400 !important;
-}
-
-.link-voltar:hover {
-    color: var(--cor-primaria) !important;
-}
-
-
-/* =====================================================
-   ANIMAÇÃO
-===================================================== */
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-
-/* =====================================================
-   RESPONSIVIDADE MOBILE
-===================================================== */
 @media (max-width: 600px) {
-    body {
-        padding: var(--espacamento-md);
-        align-items: flex-start;
-        padding-top: var(--espacamento-xl);
-    }
-
-    .caixa-registo {
-        padding: var(--espacamento-lg);
-    }
-
-    /* No mobile, tudo fica em 1 coluna */
-    form {
-        grid-template-columns: 1fr;
-    }
-
-    .largura-total,
-    .acoes-formulario {
-        grid-column: span 1;
-    }
-
-    .links-rodape {
-        flex-direction: column;
-        text-align: center;
-    }
+    body { padding: var(--espacamento-md); align-items: flex-start; padding-top: var(--espacamento-xl); }
+    .caixa-registo { padding: var(--espacamento-lg); }
+    form { grid-template-columns: 1fr; }
+    .largura-total, .acoes-formulario { grid-column: span 1; }
+    .links-rodape { flex-direction: column; text-align: center; }
 }
