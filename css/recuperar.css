@@ -83,11 +83,17 @@ body {
     font-family: var(--fonte-corpo);
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    /* flex-start em vez de center:
+       evita que o conteúdo seja cortado no topo
+       quando a caixa for maior que o ecrã */
+    align-items: flex-start;
     justify-content: center;
-    padding: var(--espaco-lg);
+    /* Padding vertical garante espaço acima e abaixo da caixa */
+    padding: var(--espaco-xl) var(--espaco-lg);
     position: relative;
-    overflow: hidden;
+    /* Permite scroll vertical, bloqueia só o horizontal */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 a   { text-decoration: none; color: inherit; }
@@ -132,6 +138,9 @@ button { cursor: pointer; font-family: var(--fonte-corpo); }
     max-width: 460px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(67,196,99,0.06);
     animation: aparecer 0.6s ease both;
+    /* Margem automática centra a caixa verticalmente
+       quando há espaço suficiente no ecrã */
+    margin: auto;
 }
 
 
@@ -684,9 +693,16 @@ input.com-erro {
 /* =====================================================
    14. RESPONSIVIDADE
 ===================================================== */
-@media (max-width: 480px) {
-    body { padding: var(--espaco-md); align-items: flex-start; padding-top: var(--espaco-xl); }
-    .caixa-recuperar { padding: var(--espaco-lg); }
+@media (max-width: 500px) {
+    body {
+        /* No mobile, padding menor mas mantém scroll vertical livre */
+        padding: var(--espaco-lg) var(--espaco-md);
+        align-items: flex-start;
+    }
+    .caixa-recuperar {
+        padding: var(--espaco-lg);
+        margin: 0 auto;
+    }
 
     .campos-codigo { gap: 7px; }
     .campo-codigo  { width: 44px !important; height: 52px; font-size: 1.3rem; }
