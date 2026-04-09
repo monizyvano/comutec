@@ -447,6 +447,48 @@ h3 { font-size: 1.3rem; }
     overflow: hidden;
     opacity: 0;
     transform: translateY(30px);
+    
+}
+.cartao-servico__imagem {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    z-index: 0;
+}
+
+/* CONTEÚDO FICA POR CIMA */
+.cartao-servico__conteudo {
+    position: relative;
+    z-index: 2;
+}
+
+/* HOVER MODERNO */
+.cartao-servico:hover .cartao-servico__imagem {
+    transform: scale(1.1);
+    opacity: 0.25;
+}
+      
+/* Hardware */
+.cartao-servico:nth-child(1) .cartao-servico__imagem {
+    background-image: url('../Img/baixados\ \(3\).jpg');
+}
+
+/* Sistemas Web */
+.cartao-servico:nth-child(2) .cartao-servico__imagem {
+    background-image: url('../Img/Software\ Consulting\ and\ Development\ Company.jpg');
+}
+
+/* Cibersegurança */
+.cartao-servico:nth-child(3) .cartao-servico__imagem {
+    background-image: url('../Img/4K\ Cyber\ Security\ Visual_\ Glowing\ Padlock\ &\ Data\ Network\ Loop.jpg');
+}
+
+/* Suporte */
+.cartao-servico:nth-child(4) .cartao-servico__imagem {
+    background-image: url('../Img/close-up-hands-holding-hardware-components.jpg');
 }
 .cartao-servico.visivel {
     opacity: 1;
@@ -459,9 +501,11 @@ h3 { font-size: 1.3rem; }
 }
 .cartao-servico:hover {
     border-color: var(--cor-borda-hover);
-    box-shadow: var(--sombra-brilho);
+    box-shadow: var(--sombra-brilho), 0 10px 40px rgba(0,0,0,0.6), 0 0 20px rgba(67,196,99,0.2);
     transform: translateY(-6px);
+    
 }
+
 .cartao-servico::before {
     content: '';
     position: absolute;
