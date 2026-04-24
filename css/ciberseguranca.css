@@ -1,0 +1,16 @@
+      :root { --gradiente-servico: linear-gradient(135deg, #e63946, #ff6b6b); --cor-primaria: #e63946; --cor-icone: rgba(230,57,70,0.12); }
+        .texto-gradiente { background:var(--gradiente-servico); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .etiqueta-seccao { color:#e63946; }
+        .botao--primario { background:var(--gradiente-servico); }
+        .botao--primario:hover { box-shadow:0 8px 25px rgba(230,57,70,0.35); }
+        .botao--contorno:hover { border-color:#e63946; color:#e63946; background:rgba(230,57,70,0.08); }
+        .cartao-incluido__tag { background:rgba(230,57,70,0.1); color:#e63946; border-color:rgba(230,57,70,0.2); }
+        .cartao-caso__sector { background:rgba(230,57,70,0.1); color:#e63946; border-color:rgba(230,57,70,0.2); }
+        .vantagem__icone svg, .painel-stat__item svg { stroke:#e63946; }
+        .passo__numero { background:var(--gradiente-servico); }
+        .cartao-outro__link, .link-voltar-inicio { color:#e63946; }
+        .cartao-incluido__num { background:var(--gradiente-servico); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .faq__icone svg { stroke:#e63946; }
+        .faq__item.aberto .faq__icone { background:rgba(230,57,70,0.2); }
+        .circulo--1, .circulo--2 { background:#e63946; }
+        .cor-borda { color:rgba(230,57,70,0.18); }
