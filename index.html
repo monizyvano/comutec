@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="css/pagina_inicial.css">
 </head>
 <body>
-    <!-- ========== CABEÇALHO ========== -->
+
+    <!-- ========== INDICADOR DE SCROLL ========== -->
+    <div class="indicador-scroll" id="indicador-scroll"></div>
+
+   <!-- ========== CABEÇALHO ========== -->
     <header id="cabecalho">
         <a href="index.html" class="logotipo">
             <div class="logotipo__texto">
@@ -46,6 +50,9 @@
             <div class="circuito circuito--2"></div>
             <div class="circuito circuito--3"></div>
         </div>
+        <!-- Partículas flutuantes -->
+            <div class="particulas" id="particulas"></div>
+        </div>
 
         <div class="heroi__conteudo">
             <span class="etiqueta-destaque">🌍 Tecnologia &amp; Comunicação — Angola</span>
@@ -59,8 +66,8 @@
             </p>
 
             <!-- Botões principais de acção -->
-            <div class="heroi__acoes">
-                <button id="btn-comecar" class="botao botao--primario botao--grande">
+            <div class="heroi__acoes animar" data-animacao="entrar-cima" data-atraso="450">
+                <button id="btn-comecar" class="botao botao--primario botao--grande botao--magnetico">
                     Começar Agora
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -129,6 +136,13 @@
         </div>
     </section>
 
+     <!-- Indicador de scroll para baixo -->
+        <div class="heroi__scroll-indicador animar" data-animacao="entrar-cima" data-atraso="900">
+            <span></span>
+        </div>
+    </section>
+
+
 
 <!-- ========== SERVIÇOS ========== -->
     <section class="servicos" id="servicos">
@@ -153,7 +167,7 @@
                         </svg>
                     </span>
                 </a>
-                <a href="../comutec/html/sistemas_web.html" class="cartao-servico cartao-servico--web" data-atraso="100">
+                <a href="html/sistemas_web.html" class="cartao-servico cartao-servico--web" data-atraso="100">
                     <div class="cartao-servico__imagem"></div>
                     <div class="cartao-servico__brilho"></div>
                     <div class="cartao-servico__icone">
@@ -196,7 +210,7 @@
                     </span>
                 </a>
                 <!-- NOVO CARTÃO: PROGRAMA DE ESTÁGIOS -->
-                <a href="/html/programa_estagios.html" class="cartao-servico cartao-servico--estagios cartao-servico--destaque" data-atraso="400">
+                <a href="html/" class="cartao-servico cartao-servico--estagios cartao-servico--destaque" data-atraso="400">
                     <div class="cartao-servico__imagem"></div>
                     <div class="cartao-servico__brilho"></div>
                     <span class="cartao-servico__fita">NOVO</span>
@@ -485,6 +499,13 @@
         </div>
     </footer>
 
+  <!-- Botão voltar ao topo -->
+    <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
     <script src="js/pagina_inicial.js"></script>
+
 </body>
 </html>

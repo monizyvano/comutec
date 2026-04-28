@@ -1,11 +1,11 @@
 /* =====================================================
-   COMUTEC — Estilos das Páginas de Serviço (Detalhe)
-   Ficheiro: css/servico-detalhe.css
+   COMUTEC — Folha de Estilos das Páginas de Serviços
+   Ficheiro: css/pagina_servico.css
    Versão: 1.0
-   Utilizado por: hardware-redes, sistemas-web,
-                  ciberseguranca, suporte-tecnico,
-                  cloud-servidores
 ===================================================== */
+
+/* Importa todas as variáveis e base da folha principal */
+@import url('pagina_inicial.css');
 
 :root {
     --cor-fundo:            #020f1a;
@@ -35,6 +35,147 @@
     --trans-rapida: 0.2s ease;
     --trans-normal: 0.35s ease;
 }
+
+
+/* ── Herói da Página de Serviço ── */
+.heroi-servico {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 5% 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradiente-fundo);
+}
+
+.heroi-servico__fundo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heroi-servico__fundo::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 900px; height: 900px;
+    background: radial-gradient(circle, var(--cor-tema, rgba(67,196,99,0.12)) 0%, transparent 65%);
+    animation: pulsar 8s ease-in-out infinite;
+}
+
+.heroi-servico__fundo::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -15%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(26,111,202,0.1) 0%, transparent 65%);
+    animation: pulsar 8s ease-in-out infinite 2s;
+}
+
+.heroi-servico__conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.heroi-servico__etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(67,196,99,0.1);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: var(--raio-full);
+    margin-bottom: var(--espaco-lg);
+}
+
+.heroi-servico__etiqueta svg {
+    width: 16px; height: 16px;
+}
+
+.heroi-servico__icone-grande {
+    width: 90px; height: 90px;
+    background: var(--gradiente-principal);
+    border-radius: var(--raio-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--espaco-lg);
+    box-shadow: 0 12px 40px rgba(67,196,99,0.3);
+    animation: flutuar-icone 4s ease-in-out infinite;
+}
+
+.heroi-servico__icone-grande svg {
+    width: 48px; height: 48px;
+    fill: white;
+}
+
+.heroi-servico__titulo {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--espaco-lg);
+    letter-spacing: -1px;
+}
+
+.heroi-servico__subtitulo {
+    color: var(--cor-texto-suave);
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto var(--espaco-xl);
+    line-height: 1.7;
+}
+
+.heroi-servico__acoes {
+    display: flex;
+    gap: var(--espaco-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ── Trilho de navegação (breadcrumb) ── */
+.trilho {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: var(--espaco-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.trilho a {
+    color: var(--cor-texto-suave);
+    transition: color var(--trans-rapida);
+}
+
+.trilho a:hover { color: var(--cor-primaria); }
+
+.trilho__separador {
+    color: var(--cor-borda-hover);
+    font-size: 0.7rem;
+}
+
+.trilho__actual { color: var(--cor-primaria); font-weight: 600; }
+
+/* ── Secção Genérica ── */
+.seccao-servico {
+    padding: var(--espaco-2xl) 0;
+    position: relative;
+}
+
+.seccao-servico--alterna {
+    background: rgba(67,196,99,0.03);
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -324,22 +465,104 @@ h3 { font-size:1.2rem; }
 .faq__item.aberto .faq__resposta { max-height:300px; padding:0 var(--espaco-xl) var(--espaco-lg); }
 .faq__resposta p { color:var(--cor-texto-suave); font-size:0.9rem; line-height:1.7; }
 
-/* ── CTA final ── */
+/* ── CTA Final da Página de Serviço ── */
 .cta-servico {
-    padding:var(--espaco-2xl) 0;
-    background:rgba(0,0,0,0.2);
-    position:relative; z-index:1; overflow:hidden;
+    padding: var(--espaco-2xl) 0;
+    background: linear-gradient(135deg, var(--cor-fundo-cartao) 0%, var(--cor-fundo-cartao-2) 100%);
+    border-top: 1px solid var(--cor-borda);
+    position: relative;
+    overflow: hidden;
 }
+
 .cta-servico::before {
-    content:''; position:absolute;
-    width:600px; height:600px;
-    background:radial-gradient(circle,rgba(67,196,99,0.07) 0%,transparent 70%);
-    top:50%; left:50%; transform:translate(-50%,-50%);
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, var(--cor-tema, rgba(67,196,99,0.08)) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: pulsar 8s ease-in-out infinite;
 }
-.cta-servico__conteudo { text-align:center; max-width:700px; margin:0 auto; position:relative; z-index:1; }
-.cta-servico__conteudo h2 { margin:var(--espaco-md) 0 var(--espaco-lg); }
-.cta-servico__conteudo p  { color:var(--cor-texto-suave); font-size:1.05rem; margin-bottom:var(--espaco-xl); }
-.cta-servico__acoes { display:flex; gap:var(--espaco-md); justify-content:center; flex-wrap:wrap; }
+
+.cta-servico__conteudo {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-servico__conteudo h2 {
+    margin-bottom: var(--espaco-md);
+}
+
+.cta-servico__conteudo p {
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+    margin-bottom: var(--espaco-xl);
+}
+
+.cta-servico__acoes {
+    display: flex;
+    gap: var(--espaco-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ── Cores temáticas por página ── */
+.tema-hardware   { --cor-tema: rgba(26,111,202,0.18); }
+.tema-web        { --cor-tema: rgba(67,196,99,0.18); }
+.tema-seguranca  { --cor-tema: rgba(239,68,68,0.18); }
+.tema-suporte    { --cor-tema: rgba(217,119,6,0.18); }
+.tema-estagios   { --cor-tema: rgba(124,58,237,0.18); }
+
+/* Animações específicas desta página */
+@keyframes flutuar-icone {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+/* ── Responsividade ── */
+@media (max-width: 900px) {
+    .destaque-grande { grid-template-columns: 1fr; }
+    .destaque-grande__visual { min-height: 250px; }
+    .destaque-grande__visual svg { width: 130px; height: 130px; }
+}
+
+@media (max-width: 640px) {
+    .heroi-servico { padding: 120px 5% 60px; }
+    .heroi-servico__icone-grande { width: 70px; height: 70px; }
+    .heroi-servico__icone-grande svg { width: 36px; height: 36px; }
+    .heroi-servico__acoes { flex-direction: column; align-items: stretch; }
+    .cta-servico__acoes { flex-direction: column; align-items: stretch; }
+}
+
+/* ── Botão Voltar ao Topo ── */
+.btn-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px; height: 50px;
+    background: var(--gradiente-principal);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--trans-normal);
+    z-index: 999;
+    box-shadow: 0 8px 25px rgba(67,196,99,0.35);
+}
+.btn-topo.visivel { opacity: 1; visibility: visible; transform: translateY(0); }
+.btn-topo:hover { transform: translateY(-4px) scale(1.1); box-shadow: 0 12px 30px rgba(67,196,99,0.5); }
+.btn-topo svg { width: 22px; height: 22px; }
+
 
 /* ── Rodapé ── */
 .rodape { background:var(--cor-fundo-cartao); border-top:1px solid var(--cor-borda); padding:var(--espaco-lg) 0; position:relative; z-index:1; }

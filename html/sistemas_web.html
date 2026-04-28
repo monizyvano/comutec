@@ -43,53 +43,51 @@
     </a>
 </header>
 
-<section class="servico-heroi" aria-labelledby="titulo-servico">
-    <div class="servico-heroi__fundo" aria-hidden="true"></div>
-    <div class="contentor">
-        <div class="migalha">
-            <a href="../../index.html">Início</a>
-            <span class="migalha__sep">›</span>
-            <a href="../../index.html#servicos">Serviços</a>
-            <span class="migalha__sep">›</span>
-            <span>Sistemas & Web</span>
-        </div>
-        <div class="servico-heroi__layout">
-            <div class="servico-heroi__info">
-                <div class="servico-heroi__icone-grande">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#43c463" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <span class="etiqueta-seccao">Serviço</span>
-                <h1 id="titulo-servico">Sistemas <span class="texto-gradiente">&amp; Web</span></h1>
-                <p>Transformamos as suas necessidades de negócio em software funcional e elegante. Desenvolvemos sistemas de gestão, sites institucionais, plataformas de e-commerce e aplicações móveis que automatizam processos e aumentam a produtividade.</p>
-                <div class="servico-heroi__acoes">
-                    <a href="../../index.html#contacto" class="botao botao--primario botao--grande">Solicitar Orçamento</a>
-                    <a href="#incluido" class="botao botao--contorno botao--grande">Ver o que inclui</a>
-                </div>
-            </div>
-            <aside class="servico-heroi__painel">
-                <div class="painel-stat">
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">+50</span><span class="painel-stat__label">Sistemas desenvolvidos</span></div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">30 dias</span><span class="painel-stat__label">Entrega média de projecto</span></div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">12 meses</span><span class="painel-stat__label">Garantia pós-entrega</span></div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">Dedicado</span><span class="painel-stat__label">Gestor de projecto por cliente</span></div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </div>
-</section>
+<!-- ========== HERÓI DO SERVIÇO ========== -->
+    <section class="heroi-servico">
+        <div class="heroi-servico__fundo"></div>
+        <div class="heroi-servico__conteudo">
 
+            <div class="trilho animar" data-animacao="entrar-cima">
+                <a href="../index.html">Início</a>
+                <span class="trilho__separador">❯</span>
+                <a href="../index.html#servicos">Serviços</a>
+                <span class="trilho__separador">❯</span>
+                <span class="trilho__actual">Sistemas Web</span>
+            </div>
+
+            <span class="heroi-servico__etiqueta animar" data-animacao="entrar-cima" data-atraso="100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                </svg>
+                Desenvolvimento de Software
+            </span>
+
+            <div class="heroi-servico__icone-grande animar" data-animacao="escala" data-atraso="200">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/></svg>
+            </div>
+
+            <h1 class="heroi-servico__titulo animar" data-animacao="entrar-cima" data-atraso="300">
+                Sistemas Web <span class="texto-gradiente">sob medida</span>
+            </h1>
+
+            <p class="heroi-servico__subtitulo animar" data-animacao="entrar-cima" data-atraso="400">
+                Desenvolvemos plataformas web, ERPs, e-commerce e aplicações que automatizam processos,
+                aumentam a produtividade e transformam a forma como a sua empresa opera.
+            </p>
+
+            <div class="heroi-servico__acoes animar" data-animacao="entrar-cima" data-atraso="500">
+                <a href="contacto.html" class="botao botao--primario botao--grande botao--magnetico">
+                    Pedir Proposta
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#como-aderir" class="botao botao--contorno botao--grande">Como aderir</a>
+            </div>
+        </div>
+    </section>
+    
 <section class="incluido" id="incluido">
     <div class="contentor">
         <div class="cabecalho-seccao">

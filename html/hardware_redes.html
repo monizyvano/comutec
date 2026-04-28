@@ -31,6 +31,9 @@
     <div class="circulo circulo--3"></div>
 </div>
 
+    <div class="indicador-scroll" id="indicador-scroll"></div>
+
+
 <!-- ── Cabeçalho ── -->
 <header class="cabecalho-pagina" role="banner">
     <a href="../../index.html" class="logotipo" aria-label="COMUTEC — Voltar à página inicial">
@@ -52,69 +55,53 @@
     </a>
 </header>
 
-<!-- ── Herói do Serviço ── -->
-<section class="servico-heroi" aria-labelledby="titulo-servico">
-    <div class="servico-heroi__fundo" aria-hidden="true"></div>
-    <div class="contentor">
-        <div class="migalha" aria-label="Localização na navegação">
-            <a href="../../index.html">Início</a>
-            <span class="migalha__sep">›</span>
-            <a href="../../index.html#servicos">Serviços</a>
-            <span class="migalha__sep">›</span>
-            <span>Hardware & Redes</span>
-        </div>
-        <div class="servico-heroi__layout">
-            <div class="servico-heroi__info">
-                <div class="servico-heroi__icone-grande" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#3a9aff" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                </div>
-                <span class="etiqueta-seccao">Serviço</span>
-                <h1 id="titulo-servico">Hardware <span class="texto-gradiente">&amp; Redes</span></h1>
-                <p>Infra­estrutura sólida é a base de qualquer negócio moderno. Fornecemos, instalamos e mantemos equipamentos de rede, servidores, postos de trabalho e toda a conectividade necessária para o seu negócio funcionar sem interrupções.</p>
-                <div class="servico-heroi__acoes">
-                    <a href="../../index.html#contacto" class="botao botao--primario botao--grande">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.57 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.55 5.55l1.82-1.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Solicitar Orçamento
-                    </a>
-                    <a href="#incluido" class="botao botao--contorno botao--grande">Ver o que inclui</a>
-                </div>
-            </div>
-            <aside class="servico-heroi__painel" aria-label="Estatísticas do serviço">
-                <div class="painel-stat">
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                        <div class="painel-stat__info">
-                            <span class="painel-stat__valor">99,9%</span>
-                            <span class="painel-stat__label">Uptime garantido</span>
-                        </div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <div class="painel-stat__info">
-                            <span class="painel-stat__valor">4h</span>
-                            <span class="painel-stat__label">Tempo de resposta máximo</span>
-                        </div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        <div class="painel-stat__info">
-                            <span class="painel-stat__valor">+120</span>
-                            <span class="painel-stat__label">Empresas servidas</span>
-                        </div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <div class="painel-stat__info">
-                            <span class="painel-stat__valor">Garantia</span>
-                            <span class="painel-stat__label">Total nos equipamentos</span>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </div>
-</section>
 
+
+    <!-- ========== HERÓI DO SERVIÇO ========== -->
+    <section class="heroi-servico">
+        <div class="heroi-servico__fundo"></div>
+        <div class="heroi-servico__conteudo">
+
+            <div class="trilho animar" data-animacao="entrar-cima">
+                <a href="../index.html">Início</a>
+                <span class="trilho__separador">❯</span>
+                <a href="../index.html#servicos">Serviços</a>
+                <span class="trilho__separador">❯</span>
+                <span class="trilho__actual">Hardware &amp; Redes</span>
+            </div>
+
+            <span class="heroi-servico__etiqueta animar" data-animacao="entrar-cima" data-atraso="100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                </svg>
+                Infra-estrutura empresarial
+            </span>
+
+            <div class="heroi-servico__icone-grande animar" data-animacao="escala" data-atraso="200">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,13H4V11H20M7,19H17V17H7M10,5H14V7H10M22,3H2V21H22V3Z"/></svg>
+            </div>
+
+            <h1 class="heroi-servico__titulo animar" data-animacao="entrar-cima" data-atraso="300">
+                Hardware &amp; Redes <span class="texto-gradiente">de alta performance</span>
+            </h1>
+
+            <p class="heroi-servico__subtitulo animar" data-animacao="entrar-cima" data-atraso="400">
+                Montamos a espinha dorsal tecnológica da sua empresa: desde servidores de alta disponibilidade
+                até redes estruturadas capazes de suportar o crescimento do seu negócio com estabilidade total.
+            </p>
+
+            <div class="heroi-servico__acoes animar" data-animacao="entrar-cima" data-atraso="500">
+                <a href="contacto.html" class="botao botao--primario botao--grande botao--magnetico">
+                    Pedir Orçamento
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#como-aderir" class="botao botao--contorno botao--grande">Como aderir</a>
+            </div>
+        </div>
+    </section>
 <!-- ── O que está incluído ── -->
 <section class="incluido" id="incluido" aria-labelledby="titulo-incluido">
     <div class="contentor">
@@ -313,7 +300,7 @@
             <h2 id="titulo-outros">Outros <span class="texto-gradiente">serviços</span></h2>
         </div>
         <div class="grelha-outros">
-            <a href="sistemas-web.html" class="cartao-outro">
+            <a href="sistemas_web.html" class="cartao-outro">
                 <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg></div>
                 <h4>Sistemas & Web</h4>
                 <p>Desenvolvimento de sistemas de gestão, sites institucionais e plataformas web à medida.</p>
@@ -331,7 +318,7 @@
                 <p>Migração para a nuvem, gestão de servidores virtuais e soluções de backup automatizado.</p>
                 <span class="cartao-outro__link">Saber mais →</span>
             </a>
-            <a href="suporte-tecnico.html" class="cartao-outro">
+            <a href="suporte_tecnico.html" class="cartao-outro">
                 <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg></div>
                 <h4>Suporte Técnico</h4>
                 <p>Helpdesk dedicado, suporte remoto e presencial para toda a sua equipa.</p>
@@ -341,23 +328,28 @@
     </div>
 </section>
 
-<!-- ── CTA Final ── -->
-<section class="cta-servico" aria-labelledby="titulo-cta">
-    <div class="contentor">
-        <div class="cta-servico__conteudo">
-            <span class="etiqueta-seccao">Pronto para começar?</span>
-            <h2 id="titulo-cta">A sua rede merece <span class="texto-gradiente">a melhor solução</span></h2>
-            <p>Contacte-nos hoje para um diagnóstico gratuito e sem compromisso. Avaliamos a sua infra­estrutura actual e apresentamos a melhor solução para o seu negócio.</p>
-            <div class="cta-servico__acoes">
-                <a href="../../index.html#contacto" class="botao botao--primario botao--grande">Pedir Diagnóstico Gratuito</a>
-                <a href="tel:+244923000000" class="botao botao--contorno botao--grande">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.57 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.55 5.55l1.82-1.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Ligar Agora
-                </a>
+ <!-- ========== CTA ========== -->
+    <section class="cta-servico">
+        <div class="contentor">
+            <div class="cta-servico__conteudo">
+                <span class="etiqueta-seccao animar" data-animacao="entrar-cima">VAMOS COMEÇAR?</span>
+                <h2 class="animar" data-animacao="entrar-cima" data-atraso="150">Pronto para modernizar<br>a sua infra-estrutura?</h2>
+                <p class="animar" data-animacao="entrar-cima" data-atraso="300">Fale com a nossa equipa técnica e receba uma proposta personalizada em até 48 horas.</p>
+                <div class="cta-servico__acoes animar" data-animacao="entrar-cima" data-atraso="450">
+                    <a href="contacto.html" class="botao botao--primario botao--grande botao--magnetico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        Pedir Orçamento
+                    </a>
+                    <a href="tel:+244933733931" class="botao botao--contorno botao--grande">
+                         +244 933 733 931
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 <!-- ── Rodapé ── -->
 <footer class="rodape" role="contentinfo">
@@ -369,6 +361,15 @@
     </div>
 </footer>
 
-<script src="/js/hardware-rede.js"></script>
+<!-- Botão voltar ao topo -->
+    <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <script src="pagina_servico.js"></script>
+
+
 </body>
 </html>

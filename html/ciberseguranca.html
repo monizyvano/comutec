@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/css/serviço-detalhe.css"/>
-    <link rel="stylesheet" href="/css/ciberseguranca.css"/>
 </head>
 <body>
 <div class="fundo-decorativo" aria-hidden="true">
@@ -43,42 +42,51 @@
             <a href="../../index.html#servicos">Serviços</a><span class="migalha__sep">›</span>
             <span>Cibersegurança</span>
         </div>
-        <div class="servico-heroi__layout">
-            <div class="servico-heroi__info">
-                <div class="servico-heroi__icone-grande">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <span class="etiqueta-seccao">Serviço</span>
-                <h1 id="titulo-servico">Ciber<span class="texto-gradiente">segurança</span></h1>
-                <p>Num mundo onde os ataques informáticos crescem a cada ano, proteger os seus dados e sistemas não é opcional — é uma necessidade de negócio. A COMUTEC oferece protecção a múltiplas camadas para empresas de qualquer dimensão.</p>
-                <div class="servico-heroi__acoes">
-                    <a href="../../index.html#contacto" class="botao botao--primario botao--grande">Pedir Auditoria Gratuita</a>
-                    <a href="#incluido" class="botao botao--contorno botao--grande">Ver serviços</a>
-                </div>
+        <!-- ========== HERÓI DO SERVIÇO ========== -->
+    <section class="heroi-servico">
+        <div class="heroi-servico__fundo"></div>
+        <div class="heroi-servico__conteudo">
+
+            <div class="trilho animar" data-animacao="entrar-cima">
+                <a href="../index.html">Início</a>
+                <span class="trilho__separador">❯</span>
+                <a href="../index.html#servicos">Serviços</a>
+                <span class="trilho__separador">❯</span>
+                <span class="trilho__actual">Cibersegurança</span>
             </div>
-            <aside class="servico-heroi__painel">
-                <div class="painel-stat">
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">24/7</span><span class="painel-stat__label">Monitorização activa</span></div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">15 min</span><span class="painel-stat__label">Resposta a incidentes</span></div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">ISO 27001</span><span class="painel-stat__label">Práticas certificadas</span></div>
-                    </div>
-                    <div class="painel-stat__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                        <div class="painel-stat__info"><span class="painel-stat__valor">0 Fugas</span><span class="painel-stat__label">Dados comprometidos em clientes</span></div>
-                    </div>
-                </div>
-            </aside>
+
+            <span class="heroi-servico__etiqueta animar" data-animacao="entrar-cima" data-atraso="100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Protecção Corporativa
+            </span>
+
+            <div class="heroi-servico__icone-grande animar" data-animacao="escala" data-atraso="200">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.3V15.8C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/></svg>
+            </div>
+
+            <h1 class="heroi-servico__titulo animar" data-animacao="entrar-cima" data-atraso="300">
+                Cibersegurança que <span class="texto-gradiente">protege o seu negócio</span>
+            </h1>
+
+            <p class="heroi-servico__subtitulo animar" data-animacao="entrar-cima" data-atraso="400">
+                Defendemos a sua empresa contra ameaças digitais com auditorias, pentest, firewalls avançados,
+                políticas de backup e formação contínua da sua equipa.
+            </p>
+
+            <div class="heroi-servico__acoes animar" data-animacao="entrar-cima" data-atraso="500">
+                <a href="contacto.html" class="botao botao--primario botao--grande botao--magnetico">
+                    Auditoria Gratuita
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#como-aderir" class="botao botao--contorno botao--grande">Como aderir</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 <section class="incluido" id="incluido">
     <div class="contentor">
@@ -270,17 +278,7 @@
     </div>
 </footer>
 
-<script>
-document.querySelectorAll('.faq__pergunta').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.closest('.faq__item');
-        const aberto = item.classList.contains('aberto');
-        document.querySelectorAll('.faq__item').forEach(i => { i.classList.remove('aberto'); i.querySelector('.faq__pergunta').setAttribute('aria-expanded','false'); });
-        if (!aberto) { item.classList.add('aberto'); btn.setAttribute('aria-expanded','true'); }
-    });
-});
-const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }); }, {threshold:0.1});
-document.querySelectorAll('.cartao-incluido,.passo,.vantagem,.cartao-caso,.cartao-outro').forEach(el => { el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el); });
-</script>
+<script src="pagina_servico.js"></script>
+
 </body>
 </html>

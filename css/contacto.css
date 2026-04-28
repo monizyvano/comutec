@@ -281,6 +281,7 @@ textarea { resize:vertical; min-height:120px; }
 .link-voltar-inicio { font-size:0.85rem; color:var(--cor-primaria); font-weight:600; transition:opacity var(--trans-rapida); }
 .link-voltar-inicio:hover { opacity:0.8; }
 
+
 /* ── Responsividade ── */
 @media (max-width: 900px) {
     .formulario-layout { grid-template-columns:1fr; }

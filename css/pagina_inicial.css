@@ -1,7 +1,7 @@
 /* =====================================================
    COMUTEC — Folha de Estilos Principal
    Ficheiro: css/pagina_inicial.css
-   Versão: 4.0 — Carrossel + Mais Botões + Redes Sociais
+   Versão: 5.0 — Animações Melhoradas + Programa de Estágios
 ===================================================== */
 
 :root {
@@ -39,7 +39,7 @@
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { background:var(--cor-fundo); color:var(--cor-texto); font-family:var(--fonte-corpo); line-height:1.6; overflow-x:hidden; }
 ul  { list-style:none; }
 a   { text-decoration:none; color:inherit; }
@@ -51,6 +51,26 @@ button { cursor:pointer; font-family:var(--fonte-corpo); }
 ::-webkit-scrollbar-track { background: var(--cor-fundo); }
 ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--cor-secundaria), var(--cor-primaria)); border-radius: 10px; border: 2px solid var(--cor-fundo); }
 ::-webkit-scrollbar-thumb:hover { background: var(--cor-primaria); }
+
+/* Selecção de texto */
+::selection { background: var(--cor-primaria); color: var(--cor-fundo); }
+
+h1,h2,h3,h4 { font-family:var(--fonte-titulo); font-weight:700; line-height:1.2; color:var(--cor-texto); }
+h1 { font-size: clamp(2rem,5vw,3.5rem); }
+h2 { font-size: clamp(1.6rem,3vw,2.5rem); }
+h3 { font-size: 1.3rem; }
+
+.texto-gradiente {
+    background: var(--gradiente-principal);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradiente-movimento 4s ease infinite;
+}
+.texto-verde { color:var(--cor-primaria); }
+.texto-azul  { color:var(--cor-secundaria-clara); }
+
 /* ── Indicador de scroll no topo ── */
 .indicador-scroll {
     position: fixed;
@@ -62,21 +82,6 @@ button { cursor:pointer; font-family:var(--fonte-corpo); }
     box-shadow: 0 0 10px rgba(67,196,99,0.6);
     transition: width 0.1s linear;
 }
-
-
-h1,h2,h3,h4 { font-family:var(--fonte-titulo); font-weight:700; line-height:1.2; color:var(--cor-texto); }
-h1 { font-size: clamp(2rem,5vw,3.5rem); }
-h2 { font-size: clamp(1.6rem,3vw,2.5rem); }
-h3 { font-size: 1.3rem; }
-
-.texto-gradiente {
-    background: var(--gradiente-principal);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.texto-verde { color:var(--cor-primaria); }
-.texto-azul  { color:var(--cor-secundaria-clara); }
 
 /* ── Logótipo ── */
 .logotipo { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--cor-texto); }
@@ -150,14 +155,10 @@ h3 { font-size: 1.3rem; }
     background:var(--gradiente-fundo); position:relative; overflow:hidden;
 }
 .heroi__fundo { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
-.circuito { position:absolute; border-radius:50%; border:1px solid rgba(67,196,99,0.08); animation:pulsar 6s ease-in-out infinite; }
+.circuito { position:absolute; border-radius:50%; border:1px solid rgba(67,196,99,0.08); animation:pulsar 6s ease-in-out infinite; will-change: transform; }
 .circuito--1 { width:600px; height:600px; top:-200px; right:-100px; }
 .circuito--2 { width:400px; height:400px; bottom:-100px; left:-100px; animation-delay:2s; }
-.circuito--3 { width:200px; height:200px; top:40%; left:30%; animation-delay:4s; border-style:dashed; }
-.heroi__conteudo { flex:1; max-width:570px; animation:entrar-esquerda 0.8s ease both; }
-.heroi__titulo    { margin-bottom:var(--espaco-lg); letter-spacing:-1px; }
-.heroi__subtitulo { color:var(--cor-texto-suave); font-size:1.1rem; margin-bottom:var(--espaco-xl); max-width:500px; }
-.heroi__acoes { display:flex; gap:var(--espaco-md); flex-wrap:wrap; margin-bottom:var(--espaco-lg); }
+.circuito--3 { width:200px; height:200px; top:40%; left:30%; animation-delay:4s; border-style:dashed; animation: pulsar 6s ease-in-out infinite, girar-lento 30s linear infinite; }
 
 /* Partículas flutuantes */
 .particulas { position: absolute; inset: 0; pointer-events: none; }
@@ -176,6 +177,25 @@ h3 { font-size: 1.3rem; }
 .heroi__subtitulo { color:var(--cor-texto-suave); font-size:1.1rem; margin-bottom:var(--espaco-xl); max-width:500px; }
 .heroi__acoes { display:flex; gap:var(--espaco-md); flex-wrap:wrap; margin-bottom:var(--espaco-lg); }
 
+/* Indicador de scroll */
+.heroi__scroll-indicador {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px; height: 42px;
+    border: 2px solid rgba(67,196,99,0.4);
+    border-radius: 20px;
+    pointer-events: none;
+}
+.heroi__scroll-indicador span {
+    display: block;
+    width: 4px; height: 8px;
+    background: var(--cor-primaria);
+    border-radius: 2px;
+    margin: 6px auto 0;
+    animation: scroll-baixar 1.8s ease-in-out infinite;
+}
 
 /* Botões de acção rápida */
 .heroi__acoes-rapidas {
@@ -703,11 +723,18 @@ h3 { font-size: 1.3rem; }
 .cta__acoes { display:flex; gap:var(--espaco-md); justify-content:center; flex-wrap:wrap; }
 
 /* ── Rodapé ── */
-.rodape { background:var(--cor-fundo-cartao); border-top:1px solid var(--cor-borda); padding:var(--espaco-2xl) 0 var(--espaco-lg); }
+.rodape { background:var(--cor-fundo-cartao); border-top:1px solid var(--cor-borda); padding:var(--espaco-2xl) 0 var(--espaco-lg); position: relative; overflow: hidden; }
+.rodape::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cor-primaria), transparent);
+    animation: linha-deslizar 4s ease-in-out infinite;
+}
 .rodape__conteudo { display:grid; grid-template-columns:2fr 1fr 1fr; gap:var(--espaco-2xl); margin-bottom:var(--espaco-xl); }
 .rodape__marca p { color:var(--cor-texto-suave); font-size:0.85rem; margin-top:var(--espaco-md); }
 
-/* Redes sociais no rodapé */
 .rodape__redes { display:flex; gap:12px; margin-top:var(--espaco-lg); }
 .rodape__rede {
     width:38px; height:38px;
@@ -719,12 +746,12 @@ h3 { font-size: 1.3rem; }
     transition:all var(--trans-normal);
 }
 .rodape__rede svg { width:16px; height:16px; }
-.rodape__rede:hover { background:var(--cor-primaria); border-color:var(--cor-primaria); color:#020f1a; transform:translateY(-2px); }
+.rodape__rede:hover { background:var(--cor-primaria); border-color:var(--cor-primaria); color:#020f1a; transform:translateY(-4px) rotate(-5deg); box-shadow: 0 8px 20px rgba(67,196,99,0.4); }
 
 .rodape__links h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--cor-texto-suave); margin-bottom:var(--espaco-lg); }
 .rodape__links ul { display:flex; flex-direction:column; gap:var(--espaco-md); }
-.rodape__links a  { color:var(--cor-texto-suave); font-size:0.9rem; transition:color var(--trans-rapida); }
-.rodape__links a:hover { color:var(--cor-primaria); }
+.rodape__links a  { color:var(--cor-texto-suave); font-size:0.9rem; transition:color var(--trans-rapida), padding-left var(--trans-rapida); display: inline-block; }
+.rodape__links a:hover { color:var(--cor-primaria); padding-left: 6px; }
 .rodape__base { display:flex; justify-content:space-between; align-items:center; padding-top:var(--espaco-lg); border-top:1px solid var(--cor-borda); font-size:0.8rem; color:var(--cor-texto-suave); flex-wrap:wrap; gap:var(--espaco-md); }
 
 /* ── Botão Voltar ao Topo ── */
@@ -751,7 +778,6 @@ h3 { font-size: 1.3rem; }
 .btn-topo.visivel { opacity: 1; visibility: visible; transform: translateY(0); }
 .btn-topo:hover { transform: translateY(-4px) scale(1.1); box-shadow: 0 12px 30px rgba(67,196,99,0.5); }
 .btn-topo svg { width: 22px; height: 22px; }
-
 
 /* ── Animações ── */
 @keyframes entrar-esquerda { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
