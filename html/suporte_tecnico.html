@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/css/serviço-detalhe.css"/>
-    <link rel="stylesheet" href="../../css/servico-redes.css"/>
 </head>
 <body>
 <div class="fundo-decorativo" aria-hidden="true">
@@ -159,7 +158,7 @@
                 <h2>Suporte que <span class="texto-gradiente">realmente resolve</span></h2>
                 <p>Cansar os utilizadores com respostas automáticas e tempos de espera intermináveis não é suporte — é frustração. A COMUTEC faz o oposto: técnicos reais, respostas rápidas e resolução efectiva.</p>
                 <p>Cada chamado é tratado como urgente porque sabemos que para si é. 97% dos nossos tickets são resolvidos no primeiro contacto.</p>
-                <a href="../../index.html#contacto" class="botao botao--primario" style="margin-top:16px">Ver planos de suporte</a>
+                <a href="contacto.html" class="botao botao--primario" style="margin-top:16px">Ver planos de suporte</a>
             </div>
             <div class="lista-vantagens">
                 <div class="vantagem">
@@ -276,17 +275,12 @@
         </div>
     </div>
 </footer>
-<script>
-document.querySelectorAll('.faq__pergunta').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.closest('.faq__item');
-        const aberto = item.classList.contains('aberto');
-        document.querySelectorAll('.faq__item').forEach(i => { i.classList.remove('aberto'); i.querySelector('.faq__pergunta').setAttribute('aria-expanded','false'); });
-        if (!aberto) { item.classList.add('aberto'); btn.setAttribute('aria-expanded','true'); }
-    });
-});
-const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }); }, {threshold:0.1});
-document.querySelectorAll('.cartao-incluido,.passo,.vantagem,.cartao-caso,.cartao-outro').forEach(el => { el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el); });
-</script>
+  <!-- Botão voltar ao topo -->
+    <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+<script src="pagina_servico.js"></script>
 </body>
 </html>

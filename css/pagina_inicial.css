@@ -722,6 +722,50 @@ h3 { font-size: 1.3rem; }
 .cta__conteudo p  { color:var(--cor-texto-suave); font-size:1.1rem; margin-bottom:var(--espaco-xl); }
 .cta__acoes { display:flex; gap:var(--espaco-md); justify-content:center; flex-wrap:wrap; }
 
+.cta-servico {
+    padding: var(--espaco-2xl) 0;
+    background: linear-gradient(135deg, var(--cor-fundo-cartao) 0%, var(--cor-fundo-cartao-2) 100%);
+    border-top: 1px solid var(--cor-borda);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-servico::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, var(--cor-tema, rgba(67,196,99,0.08)) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: pulsar 8s ease-in-out infinite;
+}
+
+.cta-servico__conteudo {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-servico__conteudo h2 {
+    margin-bottom: var(--espaco-md);
+}
+
+.cta-servico__conteudo p {
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+    margin-bottom: var(--espaco-xl);
+}
+
+.cta-servico__acoes {
+    display: flex;
+    gap: var(--espaco-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* ── Rodapé ── */
 .rodape { background:var(--cor-fundo-cartao); border-top:1px solid var(--cor-borda); padding:var(--espaco-2xl) 0 var(--espaco-lg); position: relative; overflow: hidden; }
 .rodape::before {
