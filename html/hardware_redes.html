@@ -3,111 +3,81 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Hardware & Redes — COMUTEC</title>
+    <title>Hardware &amp; Redes — COMUTEC</title>
     <meta name="description" content="Soluções completas de hardware, infraestrutura de redes e conectividade para empresas. Instalação, configuração e manutenção profissional."/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="/css/serviço-detalhe.css"/>
-    <style>
-        /* Cor temática: Azul (Hardware/Redes) */
-        :root {
-            --cor-tema:       #1a6fca;
-            --cor-tema-clara: #3a9aff;
-            --gradiente-servico: linear-gradient(135deg, #1a6fca, #3a9aff);
-            --cor-icone: rgba(26,111,202,0.12);
-        }
-        .servico-heroi__icone-grande { --cor-icone: rgba(26,111,202,0.12); }
-        .passo__numero { background:var(--gradiente-servico); }
-        .cartao-incluido__num { -webkit-text-fill-color:transparent; background:var(--gradiente-servico); background-clip:text; -webkit-background-clip:text; }
-    </style>
+    <link rel="stylesheet" href="../css/serviço-detalhe.css"/>
 </head>
 <body>
 
-<!-- Fundo decorativo -->
 <div class="fundo-decorativo" aria-hidden="true">
     <div class="circulo circulo--1"></div>
     <div class="circulo circulo--2"></div>
     <div class="circulo circulo--3"></div>
 </div>
 
-    <div class="indicador-scroll" id="indicador-scroll"></div>
-
-
 <!-- ── Cabeçalho ── -->
 <header class="cabecalho-pagina" role="banner">
-    <a href="../../index.html" class="logotipo" aria-label="COMUTEC — Voltar à página inicial">
+    <a href="../index.html" class="logotipo" aria-label="COMUTEC — Página inicial">
         <div class="logotipo__texto">
             <span class="logotipo__nome"><span class="nome-comu">COMU</span><span class="nome-tec">TEC</span></span>
             <span class="logotipo__slogan">Soluções Tecnológicas</span>
         </div>
     </a>
     <nav class="navegacao" aria-label="Navegação principal">
-        <a href="../../index.html" class="navegacao__link">Início</a>
-        <a href="../../index.html#servicos" class="navegacao__link activo">Serviços</a>
-        <a href="../projectos.html" class="navegacao__link">Projectos</a>
-        <a href="../../index.html#sobre" class="navegacao__link">Sobre</a>
-        <a href="../../index.html#contacto" class="navegacao__link">Contacto</a>
+        <a href="../index.html" class="navegacao__link">Início</a>
+        <a href="../index.html#servicos" class="navegacao__link activo">Serviços</a>
+        <a href="sobre.html" class="navegacao__link">Sobre</a>
+        <a href="contacto.html" class="navegacao__link">Contacto</a>
     </nav>
-    <a href="../../index.html#contacto" class="botao botao--primario">
+    <a href="contacto.html" class="botao botao--primario">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Pedir Proposta
     </a>
 </header>
 
-
-
-    <!-- ========== HERÓI DO SERVIÇO ========== -->
-    <section class="heroi-servico">
-        <div class="heroi-servico__fundo"></div>
-        <div class="heroi-servico__conteudo">
-
-            <div class="trilho animar" data-animacao="entrar-cima">
-                <a href="../index.html">Início</a>
-                <span class="trilho__separador">❯</span>
-                <a href="../index.html#servicos">Serviços</a>
-                <span class="trilho__separador">❯</span>
-                <span class="trilho__actual">Hardware &amp; Redes</span>
-            </div>
-
-            <span class="heroi-servico__etiqueta animar" data-animacao="entrar-cima" data-atraso="100">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="3" width="20" height="14" rx="2"/>
-                    <path d="M8 21h8M12 17v4"/>
-                </svg>
-                Infra-estrutura empresarial
-            </span>
-
-            <div class="heroi-servico__icone-grande animar" data-animacao="escala" data-atraso="200">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,13H4V11H20M7,19H17V17H7M10,5H14V7H10M22,3H2V21H22V3Z"/></svg>
-            </div>
-
-            <h1 class="heroi-servico__titulo animar" data-animacao="entrar-cima" data-atraso="300">
-                Hardware &amp; Redes <span class="texto-gradiente">de alta performance</span>
-            </h1>
-
-            <p class="heroi-servico__subtitulo animar" data-animacao="entrar-cima" data-atraso="400">
-                Montamos a espinha dorsal tecnológica da sua empresa: desde servidores de alta disponibilidade
-                até redes estruturadas capazes de suportar o crescimento do seu negócio com estabilidade total.
-            </p>
-
-            <div class="heroi-servico__acoes animar" data-animacao="entrar-cima" data-atraso="500">
-                <a href="contacto.html" class="botao botao--primario botao--grande botao--magnetico">
-                    Pedir Orçamento
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="#como-aderir" class="botao botao--contorno botao--grande">Como aderir</a>
-            </div>
+<!-- ── Herói ── -->
+<section class="heroi-servico">
+    <div class="heroi-servico__fundo"></div>
+    <div class="heroi-servico__conteudo">
+        <div class="trilho">
+            <a href="../index.html">Início</a>
+            <span class="trilho__separador">❯</span>
+            <a href="../index.html#servicos">Serviços</a>
+            <span class="trilho__separador">❯</span>
+            <span class="trilho__actual">Hardware &amp; Redes</span>
         </div>
-    </section>
-<!-- ── O que está incluído ── -->
-<section class="incluido" id="incluido" aria-labelledby="titulo-incluido">
+        <span class="heroi-servico__etiqueta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Infra-estrutura Empresarial
+        </span>
+        <div class="heroi-servico__icone-grande">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4,1H20A1,1 0 0,1 21,2V6A1,1 0 0,1 20,7H4A1,1 0 0,1 3,6V2A1,1 0 0,1 4,1M4,9H20A1,1 0 0,1 21,10V14A1,1 0 0,1 20,15H4A1,1 0 0,1 3,14V10A1,1 0 0,1 4,9M4,17H20A1,1 0 0,1 21,18V22A1,1 0 0,1 20,23H4A1,1 0 0,1 3,22V18A1,1 0 0,1 4,17M9,5V3H7V5H9M9,13V11H7V13H9M9,21V19H7V21H9Z"/></svg>
+        </div>
+        <h1 class="heroi-servico__titulo">
+            Hardware &amp; Redes <span class="texto-gradiente">de alta performance</span>
+        </h1>
+        <p class="heroi-servico__subtitulo">
+            Montamos a espinha dorsal tecnológica da sua empresa: desde servidores de alta disponibilidade até redes estruturadas capazes de suportar o crescimento do seu negócio.
+        </p>
+        <div class="heroi-servico__acoes">
+            <a href="contacto.html" class="botao botao--primario botao--grande">
+                Pedir Orçamento
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#incluido" class="botao botao--contorno botao--grande">O que inclui</a>
+        </div>
+    </div>
+</section>
+
+<!-- ── Incluído ── -->
+<section class="incluido" id="incluido">
     <div class="contentor">
         <div class="cabecalho-seccao">
             <span class="etiqueta-seccao">O que fazemos</span>
-            <h2 id="titulo-incluido">Tudo o que precisa, <span class="texto-gradiente">num só parceiro</span></h2>
+            <h2>Tudo o que precisa, <span class="texto-gradiente">num só parceiro</span></h2>
             <p>Da escolha dos equipamentos à manutenção preventiva, cobrimos todo o ciclo de vida da sua infra­estrutura de TI.</p>
         </div>
         <div class="grelha-incluido">
@@ -120,7 +90,7 @@
             <article class="cartao-incluido">
                 <div class="cartao-incluido__num">02</div>
                 <h3>Servidores &amp; NAS</h3>
-                <p>Configuração de servidores físicos e de armazenamento em rede (NAS). Virtualização com VMware e Hyper-V. Gestão de domínio com Active Directory.</p>
+                <p>Configuração de servidores físicos e armazenamento em rede. Virtualização com VMware e Hyper-V. Gestão de domínio com Active Directory.</p>
                 <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Dell</span><span class="cartao-incluido__tag">HPE</span><span class="cartao-incluido__tag">Synology</span></div>
             </article>
             <article class="cartao-incluido">
@@ -138,7 +108,7 @@
             <article class="cartao-incluido">
                 <div class="cartao-incluido__num">05</div>
                 <h3>Monitorização de Rede</h3>
-                <p>Vigilância 24/7 da sua infra­estrutura com alertas em tempo real, relatórios de desempenho e detecção proactiva de falhas antes que afectem a operação.</p>
+                <p>Vigilância 24/7 da sua infra­estrutura com alertas em tempo real, relatórios de desempenho e detecção proactiva de falhas.</p>
                 <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Zabbix</span><span class="cartao-incluido__tag">PRTG</span><span class="cartao-incluido__tag">Grafana</span></div>
             </article>
             <article class="cartao-incluido">
@@ -151,54 +121,34 @@
     </div>
 </section>
 
-<!-- ── Como funciona ── -->
-<section class="processo" aria-labelledby="titulo-processo">
+<!-- ── Processo ── -->
+<section class="processo">
     <div class="contentor">
         <div class="cabecalho-seccao">
             <span class="etiqueta-seccao">Processo</span>
-            <h2 id="titulo-processo">Como <span class="texto-gradiente">trabalhamos</span></h2>
+            <h2>Como <span class="texto-gradiente">trabalhamos</span></h2>
             <p>Um processo claro e transparente, do diagnóstico à entrega final.</p>
         </div>
-        <div class="passos" role="list">
-            <div class="passo" role="listitem">
-                <div class="passo__numero" aria-hidden="true">1</div>
-                <h4>Diagnóstico</h4>
-                <p>Avaliação presencial da infra­estrutura actual e levantamento das necessidades.</p>
-            </div>
-            <div class="passo" role="listitem">
-                <div class="passo__numero" aria-hidden="true">2</div>
-                <h4>Proposta</h4>
-                <p>Elaboração de proposta técnica detalhada com equipamentos, prazos e custos.</p>
-            </div>
-            <div class="passo" role="listitem">
-                <div class="passo__numero" aria-hidden="true">3</div>
-                <h4>Instalação</h4>
-                <p>Execução profissional com mínima interrupção da actividade da empresa.</p>
-            </div>
-            <div class="passo" role="listitem">
-                <div class="passo__numero" aria-hidden="true">4</div>
-                <h4>Testes &amp; Entrega</h4>
-                <p>Verificação completa, documentação técnica e formação à equipa.</p>
-            </div>
-            <div class="passo" role="listitem">
-                <div class="passo__numero" aria-hidden="true">5</div>
-                <h4>Suporte</h4>
-                <p>Acompanhamento contínuo com SLA definido e relatórios periódicos.</p>
-            </div>
+        <div class="passos">
+            <div class="passo"><div class="passo__numero">1</div><h4>Diagnóstico</h4><p>Avaliação presencial da infra­estrutura actual e levantamento das necessidades.</p></div>
+            <div class="passo"><div class="passo__numero">2</div><h4>Proposta</h4><p>Elaboração de proposta técnica detalhada com equipamentos, prazos e custos.</p></div>
+            <div class="passo"><div class="passo__numero">3</div><h4>Instalação</h4><p>Execução profissional com mínima interrupção da actividade da empresa.</p></div>
+            <div class="passo"><div class="passo__numero">4</div><h4>Testes &amp; Entrega</h4><p>Verificação completa, documentação técnica e formação à equipa.</p></div>
+            <div class="passo"><div class="passo__numero">5</div><h4>Suporte</h4><p>Acompanhamento contínuo com SLA definido e relatórios periódicos.</p></div>
         </div>
     </div>
 </section>
 
 <!-- ── Vantagens ── -->
-<section class="vantagens" aria-labelledby="titulo-vantagens">
+<section class="vantagens">
     <div class="contentor">
         <div class="vantagens__layout">
             <div class="vantagens__texto">
                 <span class="etiqueta-seccao">Porquê a COMUTEC</span>
-                <h2 id="titulo-vantagens">A infra­estrutura certa <span class="texto-gradiente">faz toda a diferença</span></h2>
-                <p>Uma rede mal dimensionada ou equipamentos desactualizados custam dinheiro todos os dias — em produtividade perdida, avarias e riscos de segurança. A COMUTEC projecta soluções que crescem com a sua empresa.</p>
+                <h2>A infra­estrutura certa <span class="texto-gradiente">faz toda a diferença</span></h2>
+                <p>Uma rede mal dimensionada ou equipamentos desactualizados custam dinheiro todos os dias. A COMUTEC projecta soluções que crescem com a sua empresa.</p>
                 <p>Com técnicos certificados e parceiros de topo como Cisco, Dell e Fortinet, garantimos que a sua infra­estrutura é robusta, segura e preparada para o futuro.</p>
-                <a href="../../index.html#contacto" class="botao botao--primario" style="margin-top:16px">Falar com um especialista</a>
+                <a href="contacto.html" class="botao botao--primario" style="margin-top:16px">Falar com um especialista</a>
             </div>
             <div class="lista-vantagens">
                 <div class="vantagem">
@@ -222,18 +172,18 @@
     </div>
 </section>
 
-<!-- ── Casos de uso ── -->
-<section class="casos-uso" aria-labelledby="titulo-casos">
+<!-- ── Casos ── -->
+<section class="casos-uso">
     <div class="contentor">
         <div class="cabecalho-seccao">
             <span class="etiqueta-seccao">Casos Reais</span>
-            <h2 id="titulo-casos">Empresas que <span class="texto-gradiente">confiam em nós</span></h2>
+            <h2>Empresas que <span class="texto-gradiente">confiam em nós</span></h2>
         </div>
         <div class="grelha-casos">
             <article class="cartao-caso">
                 <span class="cartao-caso__sector">Retalho</span>
                 <h3>Rede multi-loja para cadeia de supermercados</h3>
-                <p>Implementámos uma rede MPLS ligando 8 lojas à sede, com firewall centralizada e monitorização em tempo real de todos os pontos de venda.</p>
+                <p>Rede MPLS ligando 8 lojas à sede, com firewall centralizada e monitorização em tempo real de todos os pontos de venda.</p>
                 <div class="cartao-caso__resultado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Zero interrupções em 18 meses</div>
             </article>
             <article class="cartao-caso">
@@ -253,38 +203,38 @@
 </section>
 
 <!-- ── FAQ ── -->
-<section class="faq" aria-labelledby="titulo-faq">
+<section class="faq">
     <div class="contentor">
         <div class="cabecalho-seccao">
             <span class="etiqueta-seccao">FAQ</span>
-            <h2 id="titulo-faq">Perguntas <span class="texto-gradiente">frequentes</span></h2>
+            <h2>Perguntas <span class="texto-gradiente">frequentes</span></h2>
         </div>
-        <div class="faq__lista" role="list">
-            <div class="faq__item" role="listitem">
+        <div class="faq__lista">
+            <div class="faq__item">
                 <button class="faq__pergunta" aria-expanded="false">
                     Quanto tempo demora uma instalação de rede para um escritório?
-                    <span class="faq__icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </button>
-                <div class="faq__resposta"><p>Para um escritório típico de 10 a 30 postos, a instalação completa (cablagem, switches, firewall e configuração) demora entre 1 e 3 dias úteis. Redes mais complexas ou multi-pisos podem levar até uma semana. Agendamos sempre os trabalhos para minimizar o impacto na sua actividade.</p></div>
+                <div class="faq__resposta"><p>Para um escritório típico de 10 a 30 postos, a instalação completa demora entre 1 e 3 dias úteis. Redes mais complexas ou multi-pisos podem levar até uma semana. Agendamos sempre os trabalhos para minimizar o impacto na sua actividade.</p></div>
             </div>
-            <div class="faq__item" role="listitem">
+            <div class="faq__item">
                 <button class="faq__pergunta" aria-expanded="false">
                     Trabalham com equipamentos que já temos?
-                    <span class="faq__icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </button>
                 <div class="faq__resposta"><p>Sim. Fazemos auditoria ao equipamento existente e aproveitamos tudo o que ainda tem vida útil, sugerindo substituição apenas onde é necessário. O objectivo é optimizar o seu investimento actual.</p></div>
             </div>
-            <div class="faq__item" role="listitem">
+            <div class="faq__item">
                 <button class="faq__pergunta" aria-expanded="false">
                     O que inclui o contrato de manutenção de rede?
-                    <span class="faq__icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </button>
                 <div class="faq__resposta"><p>O contrato inclui: monitorização 24/7, actualizações de firmware, visitas preventivas programadas, relatórios mensais de desempenho, suporte remoto ilimitado e intervenção no local com SLA definido. O preço é fixo e previsível.</p></div>
             </div>
-            <div class="faq__item" role="listitem">
+            <div class="faq__item">
                 <button class="faq__pergunta" aria-expanded="false">
                     Fazem instalações fora de Luanda?
-                    <span class="faq__icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
                 </button>
                 <div class="faq__resposta"><p>Sim, operamos em todo o território nacional. Para projectos fora de Luanda, deslocamos a equipa técnica necessária. Contacte-nos para agendar um diagnóstico remoto inicial sem custos.</p></div>
             </div>
@@ -293,83 +243,87 @@
 </section>
 
 <!-- ── Outros Serviços ── -->
-<section class="outros-servicos" aria-labelledby="titulo-outros">
+<section class="outros-servicos">
     <div class="contentor">
         <div class="cabecalho-seccao">
             <span class="etiqueta-seccao">Explore mais</span>
-            <h2 id="titulo-outros">Outros <span class="texto-gradiente">serviços</span></h2>
+            <h2>Outros <span class="texto-gradiente">serviços</span></h2>
         </div>
         <div class="grelha-outros">
             <a href="sistemas_web.html" class="cartao-outro">
-                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg></div>
-                <h4>Sistemas & Web</h4>
-                <p>Desenvolvimento de sistemas de gestão, sites institucionais e plataformas web à medida.</p>
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/></svg></div>
+                <h4>Sistemas &amp; Web</h4>
+                <p>Desenvolvimento de sistemas de gestão e plataformas web à medida.</p>
                 <span class="cartao-outro__link">Saber mais →</span>
             </a>
             <a href="ciberseguranca.html" class="cartao-outro">
-                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg></div>
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.3V15.8C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/></svg></div>
                 <h4>Cibersegurança</h4>
-                <p>Protecção avançada contra ameaças, auditorias de segurança e conformidade normativa.</p>
-                <span class="cartao-outro__link">Saber mais →</span>
-            </a>
-            <a href="cloud-servidores.html" class="cartao-outro">
-                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg></div>
-                <h4>Cloud & Servidores</h4>
-                <p>Migração para a nuvem, gestão de servidores virtuais e soluções de backup automatizado.</p>
+                <p>Protecção avançada contra ameaças e conformidade normativa.</p>
                 <span class="cartao-outro__link">Saber mais →</span>
             </a>
             <a href="suporte_tecnico.html" class="cartao-outro">
-                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg></div>
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1C8.14,1 5,4.14 5,8V17A3,3 0 0,0 8,20H9V12H5V8A7,7 0 0,1 12,1A7,7 0 0,1 19,8V12H15V20H16A3,3 0 0,0 19,17V8C19,4.14 15.86,1 12,1Z"/></svg></div>
                 <h4>Suporte Técnico</h4>
-                <p>Helpdesk dedicado, suporte remoto e presencial para toda a sua equipa.</p>
+                <p>Helpdesk dedicado e suporte presencial para toda a equipa.</p>
+                <span class="cartao-outro__link">Saber mais →</span>
+            </a>
+            <a href="estagios.html" class="cartao-outro">
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/></svg></div>
+                <h4>Programa de Estágios</h4>
+                <p>Migração para a nuvem e gestão de infra­estrutura cloud gerida.</p>
                 <span class="cartao-outro__link">Saber mais →</span>
             </a>
         </div>
     </div>
 </section>
 
- <!-- ========== CTA ========== -->
-    <section class="cta-servico">
-        <div class="contentor">
-            <div class="cta-servico__conteudo">
-                <span class="etiqueta-seccao animar" data-animacao="entrar-cima">VAMOS COMEÇAR?</span>
-                <h2 class="animar" data-animacao="entrar-cima" data-atraso="150">Pronto para modernizar<br>a sua infra-estrutura?</h2>
-                <p class="animar" data-animacao="entrar-cima" data-atraso="300">Fale com a nossa equipa técnica e receba uma proposta personalizada em até 48 horas.</p>
-                <div class="cta-servico__acoes animar" data-animacao="entrar-cima" data-atraso="450">
-                    <a href="contacto.html" class="botao botao--primario botao--grande botao--magnetico">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
-                        Pedir Orçamento
-                    </a>
-                    <a href="tel:+244933733931" class="botao botao--contorno botao--grande">
-                         +244 933 733 931
-                    </a>
-                </div>
+<!-- ── CTA ── -->
+<section class="cta-servico">
+    <div class="contentor">
+        <div class="cta-servico__conteudo">
+            <span class="etiqueta-seccao">VAMOS COMEÇAR?</span>
+            <h2>Pronto para modernizar <span class="texto-gradiente">a sua infra-estrutura?</span></h2>
+            <p>Fale com a nossa equipa técnica e receba uma proposta personalizada em até 48 horas.</p>
+            <div class="cta-servico__acoes">
+                <a href="contacto.html" class="botao botao--primario botao--grande">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Pedir Orçamento
+                </a>
+                <a href="tel:+244933733931" class="botao botao--contorno botao--grande">+244 933 733 931</a>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
 
 <!-- ── Rodapé ── -->
 <footer class="rodape" role="contentinfo">
     <div class="contentor">
         <div class="rodape__base">
-            <p>© 2025 COMUTEC — Soluções Tecnológicas. Todos os direitos reservados.</p>
-            <a href="../../index.html" class="link-voltar-inicio">← Voltar ao Início</a>
+            <p>© 2026 COMUTEC — Soluções Tecnológicas. Todos os direitos reservados.</p>
+            <a href="../index.html" class="link-voltar-inicio">← Voltar ao Início</a>
         </div>
     </div>
 </footer>
 
-<!-- Botão voltar ao topo -->
-    <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M12 19V5M5 12l7-7 7 7"/>
-        </svg>
-    </button>
+<button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
-    <script src="pagina_servico.js"></script>
-
-
+<script>
+document.querySelectorAll('.faq__pergunta').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item'), aberto = item.classList.contains('aberto');
+        document.querySelectorAll('.faq__item').forEach(i => { i.classList.remove('aberto'); i.querySelector('.faq__pergunta').setAttribute('aria-expanded','false'); });
+        if (!aberto) { item.classList.add('aberto'); btn.setAttribute('aria-expanded','true'); }
+    });
+});
+const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }); }, {threshold:0.1});
+document.querySelectorAll('.cartao-incluido,.passo,.vantagem,.cartao-caso,.cartao-outro').forEach(el => { el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el); });
+const btnTopo = document.getElementById('btn-topo');
+window.addEventListener('scroll', () => { btnTopo.classList.toggle('visivel', window.scrollY > 400); }, {passive:true});
+btnTopo.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:'smooth'});} }); });
+</script>
 </body>
 </html>
