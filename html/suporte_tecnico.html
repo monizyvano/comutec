@@ -8,132 +8,124 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/serviço-detalhe.css"/>
+=======
+    <link rel="stylesheet" href="../css/serviço-detalhe.css"/>
+>>>>>>> 1d904cd7bbf3599420d05b17a969ea64e61ba12d
 </head>
 <body>
+
 <div class="fundo-decorativo" aria-hidden="true">
-    <div class="circulo circulo--1"></div><div class="circulo circulo--2"></div><div class="circulo circulo--3"></div>
+    <div class="circulo circulo--1"></div>
+    <div class="circulo circulo--2"></div>
+    <div class="circulo circulo--3"></div>
 </div>
 
+<!-- ── Cabeçalho ── -->
 <header class="cabecalho-pagina" role="banner">
-    <a href="../../index.html" class="logotipo">
+    <a href="../index.html" class="logotipo" aria-label="COMUTEC — Página inicial">
         <div class="logotipo__texto">
             <span class="logotipo__nome"><span class="nome-comu">COMU</span><span class="nome-tec">TEC</span></span>
             <span class="logotipo__slogan">Soluções Tecnológicas</span>
         </div>
     </a>
     <nav class="navegacao" aria-label="Navegação principal">
-        <a href="../../index.html" class="navegacao__link">Início</a>
-        <a href="../../index.html#servicos" class="navegacao__link activo">Serviços</a>
-        <a href="../projectos.html" class="navegacao__link">Projectos</a>
-        <a href="../../index.html#sobre" class="navegacao__link">Sobre</a>
-        <a href="../../index.html#contacto" class="navegacao__link">Contacto</a>
+        <a href="../index.html" class="navegacao__link">Início</a>
+        <a href="../index.html#servicos" class="navegacao__link activo">Serviços</a>
+        <a href="sobre.html" class="navegacao__link">Sobre</a>
+        <a href="contacto.html" class="navegacao__link">Contacto</a>
     </nav>
-    <a href="../../index.html#contacto" class="botao botao--primario">Pedir Suporte</a>
+    <a href="contacto.html" class="botao botao--primario">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Pedir Suporte
+    </a>
 </header>
 
-<section class="servico-heroi" aria-labelledby="titulo-servico">
-    <div class="servico-heroi__fundo" aria-hidden="true"></div>
-    <div class="contentor">
-        <div class="migalha">
-            <a href="../../index.html">Início</a><span class="migalha__sep">›</span>
-            <a href="../../index.html#servicos">Serviços</a><span class="migalha__sep">›</span>
-            <span>Suporte Técnico</span>
+<!-- ── Herói ── -->
+<section class="heroi-servico">
+    <div class="heroi-servico__fundo"></div>
+    <div class="heroi-servico__conteudo">
+        <div class="trilho">
+            <a href="../index.html">Início</a>
+            <span class="trilho__separador">❯</span>
+            <a href="../index.html#servicos">Serviços</a>
+            <span class="trilho__separador">❯</span>
+            <span class="trilho__actual">Suporte Técnico</span>
         </div>
-       <!-- ========== HERÓI DO SERVIÇO ========== -->
-    <section class="heroi-servico">
-        <div class="heroi-servico__fundo"></div>
-        <div class="heroi-servico__conteudo">
-
-            <div class="trilho animar" data-animacao="entrar-cima">
-                <a href="../index.html">Início</a>
-                <span class="trilho__separador">❯</span>
-                <a href="../index.html#servicos">Serviços</a>
-                <span class="trilho__separador">❯</span>
-                <span class="trilho__actual">Suporte Técnico</span>
-            </div>
-
-            <span class="heroi-servico__etiqueta animar" data-animacao="entrar-cima" data-atraso="100">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-                </svg>
-                Atendimento Contínuo
-            </span>
-
-            <div class="heroi-servico__icone-grande animar" data-animacao="escala" data-atraso="200">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"/></svg>
-            </div>
-
-            <h1 class="heroi-servico__titulo animar" data-animacao="entrar-cima" data-atraso="300">
-                Suporte Técnico <span class="texto-gradiente">24/7 sempre ao seu lado</span>
-            </h1>
-
-            <p class="heroi-servico__subtitulo animar" data-animacao="entrar-cima" data-atraso="400">
-                Uma equipa técnica dedicada, disponível presencial e remotamente, para manter a sua operação
-                a funcionar sem interrupções — com SLAs claros e resposta garantida.
-            </p>
-
-            <div class="heroi-servico__acoes animar" data-animacao="entrar-cima" data-atraso="500">
-                <a href="#planos" class="botao botao--primario botao--grande botao--magnetico">
-                    Ver Planos
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="#como-aderir" class="botao botao--contorno botao--grande">Como aderir</a>
-            </div>
+        <span class="heroi-servico__etiqueta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Atendimento Contínuo
+        </span>
+        <div class="heroi-servico__icone-grande">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1C8.14,1 5,4.14 5,8V17A3,3 0 0,0 8,20H9V12H5V8A7,7 0 0,1 12,1A7,7 0 0,1 19,8V12H15V20H16A3,3 0 0,0 19,17V8C19,4.14 15.86,1 12,1Z"/></svg>
         </div>
-    </section>
+        <h1 class="heroi-servico__titulo">
+            Suporte Técnico <span class="texto-gradiente">24/7 sempre ao seu lado</span>
+        </h1>
+        <p class="heroi-servico__subtitulo">
+            Uma equipa técnica dedicada, disponível presencial e remotamente, para manter a sua operação a funcionar sem interrupções — com SLAs claros e resposta garantida.
+        </p>
+        <div class="heroi-servico__acoes">
+            <a href="#incluido" class="botao botao--primario botao--grande">
+                Ver Planos
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="contacto.html" class="botao botao--contorno botao--grande">Falar connosco</a>
+        </div>
+    </div>
+</section>
 
-
+<!-- ── Planos ── -->
 <section class="incluido" id="incluido">
     <div class="contentor">
         <div class="cabecalho-seccao">
             <span class="etiqueta-seccao">Planos de Suporte</span>
             <h2>Suporte à medida <span class="texto-gradiente">da sua empresa</span></h2>
-            <p>Escolha o plano que mais se adapta à sua equipa e infra­estrutura. Todos incluem técnicos certificados e SLA definido.</p>
+            <p>Escolha o plano que mais se adapta à sua equipa. Todos incluem técnicos certificados e SLA definido.</p>
         </div>
         <div class="grelha-incluido">
             <article class="cartao-incluido">
-                <div class="cartao-incluido__num">🔵</div>
+                <div class="cartao-incluido__num">01</div>
                 <h3>Plano Básico</h3>
                 <p>Suporte remoto por telefone e email, horário laboral (8h-18h), tempo de resposta de 2 horas, até 10 horas de suporte incluídas por mês.</p>
-                <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Remoto</span><span class="cartao-incluido__tag">8h-18h</span><span class="cartao-incluido__tag">2h SLA</span></div>
+                <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Remoto</span><span class="cartao-incluido__tag">8h–18h</span><span class="cartao-incluido__tag">2h SLA</span></div>
             </article>
             <article class="cartao-incluido">
-                <div class="cartao-incluido__num">🟡</div>
+                <div class="cartao-incluido__num">02</div>
                 <h3>Plano Empresarial</h3>
                 <p>Suporte remoto e presencial, horário alargado (7h-22h), resposta em 1 hora, visitas mensais preventivas e relatório mensal incluídos.</p>
-                <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Presencial</span><span class="cartao-incluido__tag">7h-22h</span><span class="cartao-incluido__tag">1h SLA</span></div>
+                <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Presencial</span><span class="cartao-incluido__tag">7h–22h</span><span class="cartao-incluido__tag">1h SLA</span></div>
             </article>
             <article class="cartao-incluido">
-                <div class="cartao-incluido__num">🔴</div>
+                <div class="cartao-incluido__num">03</div>
                 <h3>Plano Premium 24/7</h3>
-                <p>Suporte ininterrupto 24 horas, 7 dias por semana, resposta em 15 minutos, técnico dedicado, visitas semanais e dashboard de monitorização em tempo real.</p>
+                <p>Suporte ininterrupto 24 horas, 7 dias por semana, resposta em 15 minutos, técnico dedicado e dashboard de monitorização em tempo real.</p>
                 <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">24/7</span><span class="cartao-incluido__tag">15min SLA</span><span class="cartao-incluido__tag">Dedicado</span></div>
             </article>
             <article class="cartao-incluido">
-                <div class="cartao-incluido__num">01</div>
-                <h3>Helpdesk & Tickets</h3>
+                <div class="cartao-incluido__num">04</div>
+                <h3>Helpdesk &amp; Tickets</h3>
                 <p>Sistema de tickets com rastreio completo, histórico de todas as intervenções, relatórios de KPIs e portal self-service para os colaboradores.</p>
                 <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Portal Web</span><span class="cartao-incluido__tag">App Móvel</span><span class="cartao-incluido__tag">Email</span></div>
             </article>
             <article class="cartao-incluido">
-                <div class="cartao-incluido__num">02</div>
+                <div class="cartao-incluido__num">05</div>
                 <h3>Suporte de Campo</h3>
                 <p>Intervenção presencial para hardware, cablagem, substituição de equipamentos e problemas que não se resolvem remotamente. Equipa em Luanda disponível.</p>
                 <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Luanda</span><span class="cartao-incluido__tag">Hardware</span><span class="cartao-incluido__tag">On-site</span></div>
             </article>
             <article class="cartao-incluido">
-                <div class="cartao-incluido__num">03</div>
+                <div class="cartao-incluido__num">06</div>
                 <h3>Suporte a Utilizadores</h3>
-                <p>Ajuda directa aos colaboradores com Office, email, impressoras, passwords, instalação de software e formação básica. Reduz chamadas internas ao departamento de TI.</p>
+                <p>Ajuda directa aos colaboradores com Office, email, impressoras, passwords e instalação de software. Reduz o volume de chamadas internas ao departamento de TI.</p>
                 <div class="cartao-incluido__tags"><span class="cartao-incluido__tag">Office 365</span><span class="cartao-incluido__tag">Impressoras</span><span class="cartao-incluido__tag">Email</span></div>
             </article>
         </div>
     </div>
 </section>
 
+<!-- ── Processo ── -->
 <section class="processo">
     <div class="contentor">
         <div class="cabecalho-seccao">
@@ -143,26 +135,32 @@
         <div class="passos">
             <div class="passo"><div class="passo__numero">1</div><h4>Pedido</h4><p>O colaborador abre ticket pelo portal, email, telefone ou app móvel.</p></div>
             <div class="passo"><div class="passo__numero">2</div><h4>Triagem</h4><p>O ticket é classificado por prioridade e atribuído ao técnico mais adequado.</p></div>
-            <div class="passo"><div class="passo__numero">3</div><h4>Diagnóstico</h4><p>O técnico contacta o utilizador e avalia o problema (remoto ou presencial).</p></div>
+            <div class="passo"><div class="passo__numero">3</div><h4>Diagnóstico</h4><p>O técnico avalia o problema remotamente ou com visita presencial.</p></div>
             <div class="passo"><div class="passo__numero">4</div><h4>Resolução</h4><p>Problema resolvido e confirmado com o utilizador antes de fechar o ticket.</p></div>
             <div class="passo"><div class="passo__numero">5</div><h4>Registo</h4><p>Intervenção documentada com causa, solução e tempo gasto no histórico.</p></div>
         </div>
     </div>
 </section>
 
+<!-- ── Vantagens ── -->
 <section class="vantagens">
     <div class="contentor">
         <div class="vantagens__layout">
             <div class="vantagens__texto">
                 <span class="etiqueta-seccao">O nosso diferencial</span>
                 <h2>Suporte que <span class="texto-gradiente">realmente resolve</span></h2>
+<<<<<<< HEAD
                 <p>Cansar os utilizadores com respostas automáticas e tempos de espera intermináveis não é suporte — é frustração. A COMUTEC faz o oposto: técnicos reais, respostas rápidas e resolução efectiva.</p>
                 <p>Cada chamado é tratado como urgente porque sabemos que para si é. 97% dos nossos tickets são resolvidos no primeiro contacto.</p>
+=======
+                <p>Técnicos reais, respostas rápidas e resolução efectiva. Cansar os utilizadores com esperas intermináveis não é suporte — é frustração.</p>
+                <p>97% dos nossos tickets são resolvidos no primeiro contacto. Cada chamado é tratado com a urgência que merece.</p>
+>>>>>>> 1d904cd7bbf3599420d05b17a969ea64e61ba12d
                 <a href="contacto.html" class="botao botao--primario" style="margin-top:16px">Ver planos de suporte</a>
             </div>
             <div class="lista-vantagens">
                 <div class="vantagem">
-                    <div class="vantagem__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.57 1.25h3a2 2 0 0 1 2 1.72"/></svg></div>
+                    <div class="vantagem__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72"/></svg></div>
                     <div class="vantagem__conteudo"><h4>Técnicos com Voz</h4><p>Suporte por telefone com técnico real. Sem menus intermináveis, sem bots.</p></div>
                 </div>
                 <div class="vantagem">
@@ -182,6 +180,7 @@
     </div>
 </section>
 
+<!-- ── Casos ── -->
 <section class="casos-uso">
     <div class="contentor">
         <div class="cabecalho-seccao">
@@ -192,7 +191,7 @@
             <article class="cartao-caso">
                 <span class="cartao-caso__sector">Consultoria</span>
                 <h3>Suporte para escritório sem departamento de TI</h3>
-                <p>Empresa de consultoria com 45 colaboradores e sem TI interno. A COMUTEC funciona como o departamento de TI externo, gerindo toda a infra­estrutura e suporte.</p>
+                <p>Empresa de consultoria com 45 colaboradores sem TI interno. A COMUTEC funciona como o departamento de TI externo, gerindo toda a infra­estrutura.</p>
                 <div class="cartao-caso__resultado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>100% dos problemas resolvidos em 1h</div>
             </article>
             <article class="cartao-caso">
@@ -204,13 +203,14 @@
             <article class="cartao-caso">
                 <span class="cartao-caso__sector">Educação</span>
                 <h3>Helpdesk para universidade com 800 utilizadores</h3>
-                <p>Gestão do helpdesk de universidade com 800 alunos e 120 docentes. Suporte a sistemas académicos, email, laboratórios informáticos e infraestrutura de rede.</p>
+                <p>Gestão do helpdesk com 800 alunos e 120 docentes. Suporte a sistemas académicos, email, laboratórios e infra­estrutura de rede.</p>
                 <div class="cartao-caso__resultado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Satisfação de 98% dos utilizadores</div>
             </article>
         </div>
     </div>
 </section>
 
+<!-- ── FAQ ── -->
 <section class="faq">
     <div class="contentor">
         <div class="cabecalho-seccao">
@@ -219,25 +219,38 @@
         </div>
         <div class="faq__lista">
             <div class="faq__item">
-                <button class="faq__pergunta" aria-expanded="false">Como faço para pedir suporte urgente?<span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-                <div class="faq__resposta"><p>Clientes com contrato têm acesso a uma linha de suporte prioritária disponível no horário do seu plano. Para urgências críticas (nos planos Empresarial e Premium), a linha está disponível 24h. Também pode abrir ticket de prioridade alta no portal e a nossa equipa é imediatamente notificada.</p></div>
+                <button class="faq__pergunta" aria-expanded="false">
+                    Como faço para pedir suporte urgente?
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq__resposta"><p>Clientes com contrato têm acesso a uma linha de suporte prioritária disponível no horário do seu plano. Para urgências críticas nos planos Empresarial e Premium, a linha está disponível 24h. Também pode abrir ticket de prioridade alta no portal e a nossa equipa é imediatamente notificada.</p></div>
             </div>
             <div class="faq__item">
-                <button class="faq__pergunta" aria-expanded="false">Quanto tempo leva a resolver um problema típico?<span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-                <div class="faq__resposta"><p>97% dos problemas são resolvidos remotamente em menos de 1 hora. Problemas de hardware que requerem deslocação têm tempo de resolução de 2 a 4 horas dependendo do plano. Problemas complexos de infra­estrutura podem levar mais tempo, mas mantemos o cliente sempre informado.</p></div>
+                <button class="faq__pergunta" aria-expanded="false">
+                    Quanto tempo leva a resolver um problema típico?
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq__resposta"><p>97% dos problemas são resolvidos remotamente em menos de 1 hora. Problemas de hardware que requerem deslocação têm tempo de resolução de 2 a 4 horas dependendo do plano. Mantemos o cliente sempre informado sobre o estado da intervenção.</p></div>
             </div>
             <div class="faq__item">
-                <button class="faq__pergunta" aria-expanded="false">Posso pedir suporte sem contrato?<span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-                <div class="faq__resposta"><p>Sim, prestamos suporte pontual por hora para empresas sem contrato. No entanto, os clientes com contrato têm sempre prioridade, preços mais baixos e acesso a relatórios e monitorização proactiva. Para intervenções regulares, o contrato é sempre mais económico e eficiente.</p></div>
+                <button class="faq__pergunta" aria-expanded="false">
+                    Posso pedir suporte sem contrato?
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq__resposta"><p>Sim, prestamos suporte pontual por hora para empresas sem contrato. Os clientes com contrato têm sempre prioridade, preços mais baixos e acesso a relatórios e monitorização proactiva. Para intervenções regulares, o contrato é sempre mais económico e eficiente.</p></div>
             </div>
             <div class="faq__item">
-                <button class="faq__pergunta" aria-expanded="false">O suporte remoto é seguro?<span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></button>
-                <div class="faq__resposta"><p>Sim. Usamos ferramentas de acesso remoto encriptadas (AES-256) com autenticação de dois factores. O utilizador vê sempre o que o técnico está a fazer no ecrã e pode encerrar a sessão a qualquer momento. Todas as sessões remotas são registadas para auditoria.</p></div>
+                <button class="faq__pergunta" aria-expanded="false">
+                    O suporte remoto é seguro?
+                    <span class="faq__icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq__resposta"><p>Sim. Usamos ferramentas de acesso remoto encriptadas (AES-256) com autenticação de dois factores. O utilizador vê sempre o que o técnico está a fazer e pode encerrar a sessão a qualquer momento. Todas as sessões são registadas para auditoria.</p></div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ── Outros Serviços ── -->
 <section class="outros-servicos">
     <div class="contentor">
         <div class="cabecalho-seccao">
@@ -245,14 +258,35 @@
             <h2>Outros <span class="texto-gradiente">serviços</span></h2>
         </div>
         <div class="grelha-outros">
-            <a href="hardware_redes.html" class="cartao-outro"><div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div><h4>Hardware & Redes</h4><p>Infra­estrutura e conectividade robusta.</p><span class="cartao-outro__link">Saber mais →</span></a>
-            <a href="sistemas_web.html" class="cartao-outro"><div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg></div><h4>Sistemas & Web</h4><p>Software e plataformas digitais à medida.</p><span class="cartao-outro__link">Saber mais →</span></a>
-            <a href="ciberseguranca.html" class="cartao-outro"><div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><h4>Cibersegurança</h4><p>Protecção avançada para a sua empresa.</p><span class="cartao-outro__link">Saber mais →</span></a>
-            <a href="cloud-servidores.html" class="cartao-outro"><div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg></div><h4>Cloud & Servidores</h4><p>Infra­estrutura cloud gerida para o seu negócio.</p><span class="cartao-outro__link">Saber mais →</span></a>
+            <a href="hardware_redes.html" class="cartao-outro">
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4,1H20A1,1 0 0,1 21,2V6A1,1 0 0,1 20,7H4A1,1 0 0,1 3,6V2A1,1 0 0,1 4,1M4,9H20A1,1 0 0,1 21,10V14A1,1 0 0,1 20,15H4A1,1 0 0,1 3,14V10A1,1 0 0,1 4,9M4,17H20A1,1 0 0,1 21,18V22A1,1 0 0,1 20,23H4A1,1 0 0,1 3,22V18A1,1 0 0,1 4,17M9,5V3H7V5H9M9,13V11H7V13H9M9,21V19H7V21H9Z"/></svg></div>
+                <h4>Hardware &amp; Redes</h4>
+                <p>Infra­estrutura de rede robusta para o seu negócio.</p>
+                <span class="cartao-outro__link">Saber mais →</span>
+            </a>
+            <a href="sistemas_web.html" class="cartao-outro">
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/></svg></div>
+                <h4>Sistemas &amp; Web</h4>
+                <p>Software e plataformas digitais à medida.</p>
+                <span class="cartao-outro__link">Saber mais →</span>
+            </a>
+            <a href="ciberseguranca.html" class="cartao-outro">
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.3V15.8C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/></svg></div>
+                <h4>Cibersegurança</h4>
+                <p>Protecção avançada contra ameaças digitais.</p>
+                <span class="cartao-outro__link">Saber mais →</span>
+            </a>
+            <a href="estagios.html" class="cartao-outro">
+                <div class="cartao-outro__icone"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/></svg></div>
+                <h4>Programa de Estágios</h4>
+                <p>Inicie a sua carreira em TI com mentoria real.</p>
+                <span class="cartao-outro__link">Saber mais →</span>
+            </a>
         </div>
     </div>
 </section>
 
+<!-- ── CTA ── -->
 <section class="cta-servico">
     <div class="contentor">
         <div class="cta-servico__conteudo">
@@ -260,21 +294,23 @@
             <h2>Suporte técnico <span class="texto-gradiente">que não falha</span></h2>
             <p>Escolha o plano certo para a sua empresa e comece a beneficiar de suporte profissional ainda esta semana. Sem fidelização mínima no primeiro mês.</p>
             <div class="cta-servico__acoes">
-                <a href="../../index.html#contacto" class="botao botao--primario botao--grande">Escolher o Meu Plano</a>
-                <a href="tel:+244923000000" class="botao botao--contorno botao--grande">Ligar Agora</a>
+                <a href="contacto.html" class="botao botao--primario botao--grande">Escolher o Meu Plano</a>
+                <a href="tel:+244933733931" class="botao botao--contorno botao--grande">Ligar Agora</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ── Rodapé ── -->
 <footer class="rodape" role="contentinfo">
     <div class="contentor">
         <div class="rodape__base">
-            <p>© 2025 COMUTEC — Soluções Tecnológicas. Todos os direitos reservados.</p>
-            <a href="../../index.html" class="link-voltar-inicio">← Voltar ao Início</a>
+            <p>© 2026 COMUTEC — Soluções Tecnológicas. Todos os direitos reservados.</p>
+            <a href="../index.html" class="link-voltar-inicio">← Voltar ao Início</a>
         </div>
     </div>
 </footer>
+<<<<<<< HEAD
   <!-- Botão voltar ao topo -->
     <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -282,5 +318,27 @@
         </svg>
     </button>
 <script src="pagina_servico.js"></script>
+=======
+
+<button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+document.querySelectorAll('.faq__pergunta').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item'), aberto = item.classList.contains('aberto');
+        document.querySelectorAll('.faq__item').forEach(i => { i.classList.remove('aberto'); i.querySelector('.faq__pergunta').setAttribute('aria-expanded','false'); });
+        if (!aberto) { item.classList.add('aberto'); btn.setAttribute('aria-expanded','true'); }
+    });
+});
+const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }); }, {threshold:0.1});
+document.querySelectorAll('.cartao-incluido,.passo,.vantagem,.cartao-caso,.cartao-outro').forEach(el => { el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el); });
+const btnTopo = document.getElementById('btn-topo');
+window.addEventListener('scroll', () => { btnTopo.classList.toggle('visivel', window.scrollY > 400); }, {passive:true});
+btnTopo.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:'smooth'});} }); });
+</script>
+>>>>>>> 1d904cd7bbf3599420d05b17a969ea64e61ba12d
 </body>
 </html>
