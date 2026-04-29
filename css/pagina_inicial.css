@@ -234,7 +234,7 @@ h3 { font-size: 1.3rem; }
 .painel-tech__linha { display:flex; align-items:center; gap:var(--espaco-md); margin-bottom:var(--espaco-md); }
 .ponto { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
 .ponto--activo { background:var(--cor-primaria); box-shadow:0 0 8px var(--cor-primaria); animation:piscar 2s infinite; }
-.ponto--aviso  { background:#fbbf24; box-shadow:0 0 8px #fbbf24; }
+.ponto--aviso  { background:#1fd41f; box-shadow:0 0 8px #17bd25cb; }
 .painel-tech__label  { color:var(--cor-texto-suave); font-size:0.85rem; flex:1; }
 .painel-tech__valor  { font-size:0.85rem; font-weight:700; font-family:var(--fonte-titulo); color:var(--cor-texto); }
 .painel-tech__divisor { height:1px; background:var(--cor-borda); margin:var(--espaco-md) 0; }
