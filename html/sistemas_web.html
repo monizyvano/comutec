@@ -180,7 +180,7 @@
                 <h2>Software angolano para <span class="texto-gradiente">a realidade angolana</span></h2>
                 <p>Desenvolvemos software que conhece os desafios do mercado local: integração com Multicaixa, suporte a KZ e USD, conformidade fiscal AGT e adaptação à conectividade disponível.</p>
                 <p>Não vendemos templates. Cada projecto começa do zero com foco nos seus processos reais e nas pessoas que vão usar o sistema no dia-a-dia.</p>
-                <a href="../../index.html#contacto" class="botao botao--primario" style="margin-top:16px">Falar com um especialista</a>
+                <a href="contacto.html" class="botao botao--primario" style="margin-top:16px">Falar com um especialista</a>
             </div>
             <div class="lista-vantagens">
                 <div class="vantagem">
@@ -317,18 +317,12 @@
         </div>
     </div>
 </footer>
-
-<script>
-document.querySelectorAll('.faq__pergunta').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.closest('.faq__item');
-        const aberto = item.classList.contains('aberto');
-        document.querySelectorAll('.faq__item').forEach(i => { i.classList.remove('aberto'); i.querySelector('.faq__pergunta').setAttribute('aria-expanded','false'); });
-        if (!aberto) { item.classList.add('aberto'); btn.setAttribute('aria-expanded','true'); }
-    });
-});
-const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }); }, {threshold:0.1});
-document.querySelectorAll('.cartao-incluido,.passo,.vantagem,.cartao-caso,.cartao-outro').forEach(el => { el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el); });
-</script>
+  <!-- Botão voltar ao topo -->
+    <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+<script src="pagina_servico.js"></script>
 </body>
 </html>
