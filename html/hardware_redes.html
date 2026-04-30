@@ -310,20 +310,6 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script>
-document.querySelectorAll('.faq__pergunta').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.closest('.faq__item'), aberto = item.classList.contains('aberto');
-        document.querySelectorAll('.faq__item').forEach(i => { i.classList.remove('aberto'); i.querySelector('.faq__pergunta').setAttribute('aria-expanded','false'); });
-        if (!aberto) { item.classList.add('aberto'); btn.setAttribute('aria-expanded','true'); }
-    });
-});
-const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }); }, {threshold:0.1});
-document.querySelectorAll('.cartao-incluido,.passo,.vantagem,.cartao-caso,.cartao-outro').forEach(el => { el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el); });
-const btnTopo = document.getElementById('btn-topo');
-window.addEventListener('scroll', () => { btnTopo.classList.toggle('visivel', window.scrollY > 400); }, {passive:true});
-btnTopo.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:'smooth'});} }); });
-</script>
+<script src="pagina_servico.js"></script>
 </body>
 </html>
